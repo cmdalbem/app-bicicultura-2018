@@ -15,10 +15,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -37,14 +37,20 @@ const theme = createMuiTheme({
       contrastText: '#fff',
     },
   },
+  typography: {
+    // Use the system font.
+    fontFamily:
+      '-apple-system,system-ui,BlinkMacSystemFont,' +
+      '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+  },
 });
 
 const styles = {
   root: {
     flexGrow: 1,
-    fontFamily: 'Nunito Sans'
+    fontFamily: 'Roboto, Arial, sans-serif'
   },
-  flex: {
+  flex: { 
     flex: 1,
   },
   menuButton: {
@@ -58,332 +64,424 @@ const styles = {
   }
 };
 
-function App(props) {
-  const { classes } = props;
+class App extends React.Component {
+  state = {
+    value: 0,
+  };
 
-  return (
-    <MuiThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <CssBaseline />
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit" className={classes.flex}>
-              Bicicultura 2018
-          </Typography>
-          </Toolbar>
-        </AppBar>
+  render() {
+    const { classes } = this.props;
 
-        <Button className={classes.actionButton} variant="fab" color="secondary" aria-label="add">
-          <SearchIcon />
-        </Button>
-
-
-
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="heading">
-              Sexta-Feira dia 8 de junho
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              <p>10:20 às 11:10</p>
-              <p>Observatório</p>
-                <p>Mapeamento de como anda a pesquisa sobre a bicicleta no Brasil</p>
-                <p>UCB - Yuriê Baptista - UCB GT de pesquisa</p>
-                <p>Terreiro</p>
-                <p>O uso da bicicleta e seu impacto na saúde pública.</p>
-                <p>John Fontenele Araujo – ACIRN - Associação de Ciclista do Rio Grande do Norte</p>
-                <p>Tenda</p>
-              <p>Ciclo Orçamentário para a ciclomobilidade no município do Rio de Janeiro</p>
-                <p>Análise das leis e dotação orçamentária para a ciclomobilidade no Rio de Janeiro</p>
-                <p>Ciclo Orçamentário</p>
-                <p>Carolina Queiroz - MobiRio</p>
-              <p>11:20 às 12:10	</p>
-              <p>Átrio</p>
-                <p>Ciclomensageria o cotodiano 	Tássia Furtado </p>
-                <p>Observatório</p>
-                <p>Assessoramento Jurídico para OSCs em prol da Ciclomobilidade</p>
-                <p>UCB - Leonardo Andrade Aragão - UCB GT Jurídico</p>
-                <p>Terreiro </p>
-              <p>Políticas de redução de velocidade</p>
-                <p>Medidas de segurança para ciclistas e pedestres - redução de velocidade</p>
-                <p>Aplicação de dinâmicas de planejamento sobre advocacy</p>
-                <p>Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade</p>
-              <p>Tenda</p>
-              <p>Bicicleta na Auto-Escola  e no conteúdo escolar</p>
-              <p>Ciclomobilidade para instrutores de auto-escolas</p>
-              <p>Pedro Daniel Amaral Arruda - CENTEC - Centro de Ensino Técnico de Trânsito CWB</p>
-              <p>Projeto Conhecer Pedalando</p>
-              <p>Possibilidades de inserção da bicicleta como conteúdo escolar</p>
-              <p>Bruno Wilwert Tomio - Conhecer Pedalando</p>
-              <p>12:20 às 13:10</p>
-                <p>Observatório</p>
-                <p>Como incidir pela bicicleta sobre o poder legislativo</p>
-                <p>UCB - Milvo Juliano Rossarola Júnior – UCB GT Políticas Públicas</p>
-                <p>Terreiro  	Avaliações Cicloviárias</p>
-                <p>O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife</p>
-                <p>Daniel Valença - AMECICLO</p>
-                <p>Nova proposta metodológica de avaliação de vias ciclísticas.</p>
-                <p>Fabiano Faga Pacheco – AMOBICI</p>
-              <p>Tenda</p>
-              <p>Bicicleta - Educação Social e Incentivo</p>
-              <p>Bike na Obra</p>
-              <p>Murilo Rodrigues - Bike Anjo Belém</p>
-              <p>Destinação de Bicicletas roubadas e recuperadas</p>
-                <p>Mauro Soares Tavares - Programa Rio - Estado da Bicicleta/SETRANS RJ</p>
-              <p>13:10 às 14:30</p>
-              <p>Intervalo</p>
-              <p>14:30 às 15:20</p>
-              <p>Observatório</p>
-                <p>CICLO CRIATIVO - Empreendedorismo & Bicicleta</p>
-                <p>O que ciclistas, urbanista, designer e ativista tem em comum?</p>
-                <p>Como o Design pode incentivar a Mobilidade Ativa?</p>
-                <p>Yasmim Reck - Bike Fácil</p>
-                <p>Terreiro </p>
-                <p>Politicas e Planos de Mobilidade</p>
-                <p>Avenida Brasil 	Débora Reis Fontes - UNISUAM</p>
-                <p>Plano de Mobilidade Ativa do Distrito Federal - PMA-DF 	Priscila Miti Yajima – SEMOB - DF</p>
-                <p>Diretrizes para política pública de Mobilidade Sustentável, o Programa Ciclovida 	Silvana Nakamori – UFPR / CicloIguaçu</p>
-              <p>Tenda</p>
-              <p>Bicicleta: Cultura e Arte</p>
-              <p>Giovani Rafael Seibel - COLMEIA - Coletivo Laboral Multicultural</p>
-              <p>15:30 às 16:20</p>
-              <p>Átrio</p>
-              <p>Pedestres em pauta</p>
-              <p>Moderação Thatiana Murillo – Caminha Rio</p>
-                <p>Multas a pedestres e ciclistas - Como reagir? 	Glaucia Pereira e Ana Carolina Nunes – Cidadeapé</p>
-                <p>Super-Ando</p>
-                <p>Super-Ando</p>
-                <p>Observatório</p>
-              <p>Bicicleta na Escola</p>
-              <p>Ana Destri - AMOBICI</p>
-                <p>Terreiro </p>
-                <p>Vila Velha, um panorama</p>
-                <p>Mudanças da cidade e as percepções que elas proporcionam</p>
-                <p>Fernando Braga – Ciclistas Urbanos Capixabas</p>
-                <p>Estacionamento facilita o acesso de quem adota a bicicleta como meio de transporte</p>
-                <p>Pollyana Martins – Ciclistas Vila-Velhenses</p>
-              <p>Tenda</p>
-              <p>Bicicletários Quantidade e Qualidade</p>
-              <p>Como ampliar os bicicletários adequados na sua cidade</p>
-              <p>Felipe Alves - UCB GT Infraestrutura</p>
-              <p>É possível estacionar a bicicleta “de boa”?</p>
-              <p>Hannah Kny – Bike de Boa</p>
-              <p>16:30 às 17:30</p>
-                <p>Observatório</p>
-              <p>Compartilhamento de Bicicletas</p>
-              <p>Moderação Rodrigo Vitório -TA</p>
-                <p>Coolabici</p>
-              <p>Gheysa Caroline Prado – UFPR Marina Caus dos Santos - Thaisa Meurer Piovezani - Mariana de Souza - Fernando Reinaldo Contin Falkiewicz</p>
-              <p>Bicicletar Corporativo</p>
-              <p>Aurélie Dos Santos - Serttel</p>
-                <p>Terreiro </p>
-                <p>Conceito dos Jogos de Bicicleta</p>
-              <p>Ana Carboni – Bike Anjo Niterói</p>
-              <p>Tenda </p>
-              <p>O olhar através da bicicleta</p>
-              <p>Pedal da ACERGS</p>
-              <p>Rafael Santos – ACERGS Associação dos Cegos do Estado do Rio Grande do Sul</p>
-              <p>ODKV</p>
-              <p>Maria Aline De Oliveira Gouveia e Barbara de Vasconcelos Barbosa - - Bike Anjos Campina Grande e Recife</p>
-              <p></p>
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="heading">
-              Sábado dia 9 de junho
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              <p>10:20 às 11:10</p>
-              <p>Átrio</p>
-                <p>Mulheres e Mobilidade</p>
-                <p>Moderação Aline Cavalcante - Ciclocidade</p>
-                <p>Pedala, mana!</p>
-                <p>Melissa Noguchi e Lorena Costa– Bike Anjo Belém</p>
-                <p>Festival “100Gurias100Medo”</p>
-                <p>Naone Lopes e Caro Pierro  – 100gurias100medo</p>
-                <p>Mulheres Caminhantes, auditoria de segurança de gênero e caminhabilidade</p>
-                <p>Ana Carolina Nunes e Leticia Sabino – SampaPé</p>
-                <p>Auditório</p>
-                <p>Contagens de ciclistas: monitoramento do uso de bicicletas em escala municipal</p>
-                <p>Thiago Benicchio – ITDP Brasil</p>
-              <p>Observatório</p>
-              <p>Cicloativismo e ações politicas</p>
-              <p>Moderação Felipe Alves - UCB</p>
-                <p>Prefeitura de Curitiba extinguiu infraestruturas "Calçadas Verdes"</p>
-                <p>Joao Pedro Bazzo Vieira - Cicloiguaçu</p>
-              <p>Memória e historia do cicloativismo no Brasil	</p>
-              <p>Fernando Barcellos – UCB GT Pesquisa</p>
-              <p>Contexto atual e cicloativismo</p>
-              <p>Lígia Pereira - AMECICLO</p>
-                <p>Tenda</p>
-                <p>Como Promover a Mobilidade Ativa nas Eleições de 2018</p>
-                <p>André Geraldo Soares e Ana Carolina Nunes - UCB e  SampaPé</p>
-              <p></p>
-              <p></p>
-              <p>11:20 as 12:10</p>
-                <p>Auditório</p>
-              <p>Mulheres no Cicloativismo   (11:20 às 13:10)               Mapeamento da participação de mulheres no movimento cicloativista 	Roberta Raquel - UFSC</p>
-              <p>Dificuldades e facilidades de estar a frente de uma diretoria anterior masculina</p>
-              <p>Leis que não são em prol da segurança e da vida das mulheres</p>
-              <p>Aspásia Mariana - UCB GT Gênero / Ciclovida Fortaleza</p>
-                <p>Observatório	 </p>
-                <p>Ciclomobilidade na Agenda Politica Niteroi</p>
-              <p>Fátima Priscila Morela Edra - Universidade Federal Fluminense – UFF</p>
-              <p>Tenda</p>
-              <p>Soluções para a bicicleta</p>
-              <p>Bicicletaria Cultural</p>
-              <p>Patricia Valverde – Bicicletaria Cultural</p>
-              <p>Estações de Reparos Rápidos de Bicicleta</p>
-              <p>Paulo Aguiar – Pedala Manaus</p>
-              <p>12:20 às 13:10</p>
-                <p>Observatório</p>
-              <p>Campanhas Educativas e Motivacionais</p>
-              <p>Campanha "No Trânsito Eu Compartilho Respeito"</p>
-              <p>Boca no Trombone - Palestras em empresas privadas e públicas para um público não ciclista</p>
-              <p>Nadia Aguiar – Pedala Manaus</p>
-              <p>Eu Vou de Bicicleta</p>
-              <p>Everaldo Moreira Fabrício - BikeMotiva</p>
-                <p>Tenda</p>
-                <p>Ações de Bike em Pirenópolis</p>
-                <p>Larissa Cantarelli – Bike Anjo Pirenópolis</p>
-              <p>13:10 às 14:30</p>
-              <p>Intervalo</p>
-              <p>14:30 às 15:20</p>
-                <p>Átrio </p>
-              <p>Mobilidade de Baixo Carbono</p>
-                <p>Como a bicicleta e pode contribuir com um futuro de baixo carbono</p>
-                <p>Aline Cavalcante e João Lacerda – Coalizão Clima e Mobilidade</p>
-              <p>Auditório </p>
-              <p>Cicloturismo</p>
-              <p>Moderação Ricardo Martins - RodaMundo</p>
-                <p>Equipamentos para Viagens de Bicicleta</p>
-              <p>Fábio Eduardo da Silva - Clube de Cicloturismo do Brasil</p>
-              <p>De ocupação á ocupação uma pedalada Brasília Olinda.</p>
-              <p>Mateus Lima - Bicicentro Comunitário</p>
-              <p>Viajar sola</p>
-              <p>María Paz Castillo - Pedalea x la calle- Chile</p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>Observatório</p>
-              <p>Ativismo e Academia</p>
-              <p>Moderação Vivan Garelli - PPGA UFF</p>
-              <p>Processo de concepção e implementação da ciclovia da Uni.Fed. de Itajubá</p>
-              <p>Pedro Torres de Melo Pedrosa - UNIFEI</p>
-              <p>Movimentos sociais contemporâneos e inclusão: lições do cicloativismo no Rio.</p>
-              <p>Naomi Orton – PUC Rio</p>
-              <p>Ciclomobilidade: Avaliação e Qualificação do Prog. Ciclo da RMGV- Vila Velha – ES</p>
-              <p>Pollyana Martins Rodrigues – Ciclistas Vila-Velhenses</p>
-              <p>Ciclorrotas de Aracaju</p>
-              <p>Sayuri Silva Dantas de Oliveira – Associação Ciclo Urbano</p>
-                <p>Tenda</p>
-                <p>Indicadores sobre o respeito à faixa de pedestres em Brasília</p>
-                <p>Jonas Bertucci – Rodas da Paz</p>
-              <p>15:30 às 16:20</p>
-                <p>Auditório </p>
-                <p>Cicloturismo Roteiros e Estudos</p>
-              <p>Moderação Ricardo Martins - RodaMundo</p>
-              <p>Análise comparativa entre os estudos internacionais e nacionais Cicloturismo</p>
-              <p>Fernanda Monteiro Lobão de Deus e Fátima Priscila Edra -  UFF</p>
-                <p>Papo sobre Circuitos de Cicloturismo</p>
-                <p>Ivo Leonardo Schmitz - Clube de Cicloturismo do Brasil</p>
-              <p>Criação de roteiros de cicloturismo urbano</p>
-              <p>Gustavo Carvalho - Kuritibike</p>
-              <p>Observatório</p>
-              <p>Pesquisas Ciclomobilidade</p>
-              <p>Moderação Rene Fernandes - FGV</p>
-              <p>Donde vem, pronde vão - Cruzamento de pesquisas em Recife</p>
-              <p>Daniel Valença - AMECICLO</p>
-              <p>Simulador de vantagens da mobilidade ativa</p>
-              <p>José Carlos Assunção Belotto – Ciclovida / UFPR</p>
-              <p>Como diferentes aspectos da infraestrutura influenciam ciclistas.</p>
-              <p>Joao Pedro Bazzo Vieira - CicloIguaçu</p>
-              <p>Tarauacá Cidade das Bicicletas</p>
-              <p>Valden Rocha - Bike Anjo Rio Branco</p>
-              <p>Analisar a prática cultural do andar de bicicleta na Cidade do Rio de Janeiro</p>
-              <p>Denise Pinheiro - UFRJ</p>
-                <p>Tenda</p>
-                <p>Visões sobre a bicicleta</p>
-                <p>O uso da bicicleta como transporte em cidades do interior do Ceará.</p>
-                <p>Clivia Kellen Almeida Silva - Ciclanas Fortaleza</p>
-                <p>Pedalino vê o mundo</p>
-                <p>Claudio de Moura Sobral - Cicloação Recife	</p>
-              <p>16:30 às 17:00</p>
-                <p>Auditório</p>
-              <p>Entrega prêmio A Promoção da Mobilidade por Bicicletas no Brasil 2018 Zé Lobo - Transporte Ativo</p>
-              <p>17:00 às 17:45</p>
-                <p>Auditório</p>
-                <p>Palestra Magna Clarisse Linke – ITDP Brasil</p>
-              <p></p>
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="heading">
-              Domingo dia 10 de junho
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              <p>10:20 às 13:10</p>
-                <p>Auditório</p>
-                <p>Assembleia Geral UCB</p>
-              <p>UCB</p>
-              <p>13:10 às 14:30</p>
-              <p>Intervalo</p>
-              <p>14:30 às 15:20</p>
-                <p>Átrio </p>
-              <p>Bicicleta para uma cidade sensível</p>
-              <p>Sheila Hempkemeyer - ABC - Associação Blumenauense Pró-Ciclovias</p>
-              <p>Auditório </p>
-              <p>Paradigmas do Século XXI</p>
-              <p>Renata Falzoni – André Soares – Zé Lobo. Moderação Fernando Barcellos</p>
-              <p>Observatório</p>
-              <p>Pesquisa Nacional de Avaliação da Ciclabilidade</p>
-              <p>Gláucia Pereira e Yuriê Baptista</p>
-              <p>Terreiro</p>
-                <p>Avaliações Cicloviárias - Resultados</p>
-                <p>O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife</p>
-                <p>Daniel Valença - AMECICLO</p>
-              <p>Tenda</p>
-              <p>Mecânica para Mulheres   (14:30 às 16:20)</p>
-              <p>Coordenação Tassia Furtado</p>
-                <p>Oficinas de mecânica, problemas cotidianos</p>
-              <p>Angela Soler</p>
-                <p>Troca de dicas sobre mecânica, em uma linguagem de mulher para mulher</p>
-                <p>Marcella Olinto - Garupa</p>
-              <p>15:30 às 16:30</p>
-                <p>Auditório </p>
-                <p>Palestra Magna Ricardo Martins – Roda Mundo</p>
-              <p>16:30 às 17:45</p>
-                <p>Auditório</p>
-                <p>Plenária Final Bicicultura &  Encerramento e Escolha Cidade Sede 2020</p>
-              <p>UCB</p>
-              <p></p>
+    return (
+      <MuiThemeProvider theme={theme}>
+        <div className={classes.root}>
+          <CssBaseline />
+  
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton className={classes.menuButton} color="inherit">
+                <MenuIcon />
+              </IconButton>
               
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+              <Typography variant="title" color="inherit" className={classes.flex}>
+                Bicicultura 2018
+              </Typography>
 
-      </div>
-    </MuiThemeProvider>
-  );
+              <IconButton className={classes.menuButton} color="inherit">
+                <SearchIcon />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+  
+          <div className="schedule">
+            <Paper className={classes.root + ' tab-bar'}>
+                <Tabs
+                value={this.state.value}
+                onChange={this.handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+                >
+                <Tab label="8 de junho" />
+                <Tab label="9 de junho" />
+                <Tab label="10 de junho" />
+                </Tabs>
+            </Paper>
+
+            {this.state.value === 0 &&
+              <div>
+                  {/* <div className="schedule-date">Sexta-Feira dia 8 de junho</div> */}
+                  
+                    <div className="schedule-time">10:20 às 11:10</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Observatório</div>
+                      Mapeamento de como anda a pesquisa sobre a bicicleta no Brasil
+                      UCB - Yuriê Baptista - UCB GT de pesquisa
+                      
+                      <div className="schedule-place">Terreiro</div>
+                      O uso da bicicleta e seu impacto na saúde pública.
+                      John Fontenele Araujo – ACIRN - Associação de Ciclistas do Rio Grande do Norte
+                      
+                      <div className="schedule-place">Tenda</div>
+                      Ciclo Orçamentário para a ciclomobilidade no município do Rio de Janeiro
+                      Análise das leis e dotação orçamentária para a ciclomobilidade no Rio de Janeiro
+                      Ciclo Orçamentário
+                      Carolina Queiroz - MobiRio
+                  </div>
+                  
+                    <div className="schedule-time">11:20 às 12:10</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Átrio</div>
+                      Ciclomensageria o cotodiano
+                      Tássia Furtado 
+                      
+                      <div className="schedule-place">Observatório</div>
+                      Assessoramento Jurídico para OSCs em prol da Ciclomobilidade
+                      UCB - Leonardo Andrade Aragão - UCB GT Jurídico
+                      
+                      <div className="schedule-place">Terreiro </div>
+                      olíticas de redução de velocidade
+                      Medidas de segurança para ciclistas e pedestres - redução de velocidade
+                      Aplicação de dinâmicas de planejamento sobre advocacy
+                      Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade
+                      
+                      <div className="schedule-place">Tenda</div>
+                      Bicicleta na Auto-Escola  e no conteúdo escolar
+                      iclomobilidade para instrutores de auto-escolas
+                      Pedro Daniel Amaral Arruda - CENTEC - Centro de Ensino Técnico de Trânsito CWB
+                      Projeto Conhecer Pedalando
+                      ossibilidades de inserção da bicicleta como conteúdo escolar
+                      Bruno Wilwert Tomio - Conhecer Pedalando
+                  </div>
+                  
+                    <div className="schedule-time">12:20 às 13:10</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Observatório</div>
+                      Como incidir pela bicicleta sobre o poder legislativo
+                      UCB - Milvo Juliano Rossarola Júnior – UCB GT Políticas Públicas
+                      
+                      <div className="schedule-place">Terreiro </div>
+                      Avaliações Cicloviárias
+                      O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife
+                      Daniel Valença - AMECICLO
+                      Nova proposta metodológica de avaliação de vias ciclísticas.
+                      Fabiano Faga Pacheco – AMOBICI
+                      
+                      <div className="schedule-place">Tenda</div>
+                      Bicicleta - Educação Social e Incentivo
+                      ike na Obra
+                      Murilo Rodrigues - Bike Anjo Belém
+                      estinação de Bicicletas roubadas e recuperadas
+                      Mauro Soares Tavares - Programa Rio - Estado da Bicicleta/SETRANS RJ
+                  </div>
+                  
+                    <div className="schedule-time">13:10 às 14:30</div>
+                  <div className="schedule-timebox">
+                  </div>
+                  
+                    <div className="schedule-time">14:30 às 15:20</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Observatório</div>
+                      CICLO CRIATIVO - Empreendedorismo & Bicicleta
+                      O que ciclistas, urbanista, designer e ativista tem em comum?
+                      Como o Design pode incentivar a Mobilidade Ativa?
+                      Yasmim Reck - Bike Fácil
+                      
+                      <div className="schedule-place">Terreiro </div>
+                      Politicas e Planos de Mobilidade
+                      Projeto Parque 
+                      Débora Reis Fontes – CSC-RJ e Andrea Borges-  UNISUAM
+                      Plano de Mobilidade Ativa do Distrito Federal - 
+                      Priscila Miti Yajima – SEMOB - DF
+                      Diretrizes para política pública de Mobilidade Sustentável, o Programa Ciclovida
+                      Silvana Nakamori – UFPR / CicloIguaçu
+                      
+                      <div className="schedule-place">Tenda</div>
+                      icicleta: Cultura e Arte
+                      Giovani Rafael Seibel - COLMEIA - Coletivo Laboral Multicultural
+                      A Experiência do Pedal Sonoro 
+                      Luís Araujo – Pedal Sonoro
+                  </div>
+                  
+                    <div className="schedule-time">15:30 às 16:20</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Átrio</div>
+                      Pedestres em pauta
+                      Moderação Thatiana Murillo – Caminha Rio
+                      Multas a pedestres e ciclistas - Como reagir? 	Glaucia Pereira e Ana Carolina Nunes – Cidadeapé
+                      Super-Ando
+                      Super-Ando
+                      
+                      <div className="schedule-place">Observatório</div>
+                      Bicicleta na Escola
+                      Ana Destri - AMOBICI
+                      
+                      <div className="schedule-place">Terreiro </div>
+                      Vila Velha, um panorama
+                      Mudanças da cidade e as percepções que elas proporcionam
+                      Fernando Braga – Ciclistas Urbanos Capixabas
+                      Estacionamento facilita o acesso de quem adota a bicicleta como meio de transporte
+                      Pollyana Martins – Ciclistas Vila-Velhenses
+                      
+                      <div className="schedule-place">Tenda</div>
+                      Bicicletários Quantidade e Qualidade
+                      omo ampliar os bicicletários adequados na sua cidade
+                      Felipe Alves - UCB GT Infraestrutura
+                      É possível estacionar a bicicleta “de boa”?
+                      Hannah Kny – Bike de Boa
+                  </div>
+                  
+                    <div className="schedule-time">16:30 às 17:30</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Observatório</div>
+                      Compartilhamento de Bicicletas
+                      Moderação Rodrigo Vitório -TA
+                      Gheysa Caroline Prado 
+                      Marina Caus dos Santos - Thaisa Meurer Piovezani - Mariana de Souza - Fernando Reinaldo Contin Falkiewicz
+                      icicletar Corporativo
+                      Aurélie Dos Santos - Serttel 
+              
+                      <div className="schedule-place">Terreiro </div>
+                      Conceito dos Jogos de Bicicleta
+                      Ana Carboni – Bike Anjo Niterói
+                      
+                      <div className="schedule-place">Tenda </div>
+                      O olhar através da bicicleta
+                      Pedal da ACERGS
+                      Rafael Santos – ACERGS Associação dos Cegos do Estado do Rio Grande do Sul
+                      DKV
+                      Maria Aline De Oliveira Gouveia e Barbara de Vasconcelos Barbosa - - Bike Anjos Campina Grande e Recife
+                  </div>
+              </div>        
+            }
+    
+            {this.state.value === 1 &&
+              <div>
+                {/* <div className="schedule-date">Sábado dia 9 de junho</div> */}
+  
+                <div className="schedule-time">10:20 às 11:10</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Átrio</div>
+                    Mulheres e Mobilidade
+                    Moderação Aline Cavalcante - Ciclocidade
+                    Pedala, mana!
+                    Melissa Noguchi e Lorena Costa– Bike Anjo Belém
+                    Festival “100Gurias100Medo”
+                    Naone Lopes e Caro Pierro  – 100gurias100medo
+                    Mulheres Caminhantes, auditoria de segurança de gênero e caminhabilidade
+                    Ana Carolina Nunes e Leticia Sabino – SampaPé
+                    
+                    <div className="schedule-place">Auditório</div>
+                    Contagens de ciclistas: monitoramento do uso de bicicletas em escala municipal
+                    Thiago Benicchio – ITDP Brasil
+                    
+                    <div className="schedule-place">Observatório</div>
+                    icloativismo e ações politicas
+                    Moderação Felipe Alves - UCB
+                    Prefeitura de Curitiba extinguiu infraestruturas "Calçadas Verdes"
+                    Joao Pedro Bazzo Vieira - Cicloiguaçu
+                    Memória e historia do cicloativismo no Brasil	
+                    Fernando Barcellos – UCB GT Pesquisa
+                    ontexto atual e cicloativismo
+                    Lígia Pereira - AMECICLO
+                    
+                    <div className="schedule-place">Tenda</div>
+                    Como Promover a Mobilidade Ativa nas Eleições de 2018
+                    André Geraldo Soares e Ana Carolina Nunes - UCB e  SampaPé
+                </div>
+  
+                <div className="schedule-time">11:20 às 12:10</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Auditório</div>
+                    Mulheres no Cicloativismo   (11:20 às 13:10)
+                    Mapeamento da participação de mulheres no movimento cicloativista
+                    Roberta Raquel - UFSC
+                    Dificuldades e facilidades de estar a frente de uma diretoria anterior masculina
+                    eis que não são em prol da segurança e da vida das mulheres
+                    Aspásia Mariana - UCB GT Gênero / Ciclovida Fortaleza
+                    
+                    <div className="schedule-place">Observatório</div>
+                    Agenda Politica Niteroi
+                    Fátima Priscila Morela Edra - Universidade Federal Fluminense – UFF e Sérgio Franco – Mobilidade Niterói
+                    
+                    <div className="schedule-place">Tenda</div>
+                    Soluções para a bicicleta
+                    Bicicletaria Cultural
+                    Patricia Valverde – Bicicletaria Cultural
+                    Estações de Reparos Rápidos de Bicicleta
+                    Paulo Aguiar – Pedala Manaus
+                </div>
+  
+                <div className="schedule-time">12:20 às 13:10</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Observatório</div>
+                    ampanhas Educativas e Motivacionais
+                    ampanha "No Trânsito Eu Compartilho Respeito"
+                    Boca no Trombone - Palestras em empresas privadas e públicas para um público não ciclista
+                    Nadia Aguiar – Pedala Manaus
+                    u Vou de Bicicleta
+                    Everaldo Moreira Fabrício - BikeMotiva
+                    
+                    <div className="schedule-place">Tenda</div>
+                    ções de Bike em Pirenópolis
+                    Larissa Cantarelli – Bike Anjo Pirenópolis
+                </div>
+  
+                <div className="schedule-time">13:10 às 14:30</div>
+                <div className="schedule-timebox">
+                </div>
+  
+                <div className="schedule-time">14:30 às 15:20</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Átrio </div>
+                    Mobilidade de Baixo Carbono
+                    Como a bicicleta e pode contribuir com um futuro de baixo carbono
+                    Aline Cavalcante e João Lacerda – Coalizão Clima e Mobilidade e Ana Abreu - Engajamundo
+                    
+                    <div className="schedule-place">Auditório </div>
+                    icloturismo
+                    Moderação Ricardo Martins - RodaMundo
+                    ra Viagens de Bicicleta
+                    Fábio Eduardo da Silva - Clube de Cicloturismo do Brasil
+                    e ocupação á ocupação uma pedalada Brasília Olinda.
+                    Mateus Lima - Bicicentro Comunitário
+                    iajar sola
+                    María Paz Castillo - Pedalea x la calle- Chile
+                    
+                    <div className="schedule-place">Observatório</div>
+                    tivismo e Academia
+                    Moderação Vivan Garelli - PPGA UFF
+                    rocesso de concepção e implementação da ciclovia da Uni.Fed. de Itajubá
+                    Pedro Torres de Melo Pedrosa - UNIFEI
+                    Movimentos sociais contemporâneos e inclusão: lições do cicloativismo no Rio.
+                    Naomi Orton – PUC Rio
+                    Ciclomobilidade: Avaliação e Qualificação do Prog. Ciclo da RMGV- Vila Velha – ES
+                    Pollyana Martins Rodrigues – Ciclistas Vila-Velhenses
+                    Ciclorrotas de Aracaju
+                    Sayuri Silva Dantas de Oliveira – Associação Ciclo Urbano
+                    
+                    <div className="schedule-place">Tenda</div>
+                    Indicadores sobre o respeito à faixa de pedestres em Brasília
+                    Jonas Bertucci – Rodas da Paz
+                </div>
+                    
+                <div className="schedule-time">15:30 às 16:20</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Auditório </div>
+                    teiros e Estudos
+                    Moderação Ricardo Martins - RodaMundo
+                    nálise comparativa entre os estudos internacionais e nacionais Cicloturismo
+                    Fernanda Monteiro Lobão de Deus e Fátima Priscila Edra -  UFF
+                    Papo sobre Circuitos de Cicloturismo
+                    Ivo Leonardo Schmitz - Clube de Cicloturismo do Brasil
+                    riação de roteiros de cicloturismo urbano
+                    Gustavo Carvalho - Kuritibike
+                    
+                    <div className="schedule-place">Observatório</div>
+                    esquisas Ciclomobilidade
+                    Moderação Rene Fernandes - FGV
+                    Donde vem, pronde vão - Cruzamento de pesquisas em Recife
+                    Daniel Valença - AMECICLO
+                    Simulador de vantagens da mobilidade ativa
+                    José Carlos Assunção Belotto – Ciclovida / UFPR
+                    omo diferentes aspectos da infraestrutura influenciam ciclistas.
+                    Joao Pedro Bazzo Vieira - CicloIguaçu
+                    arauacá Cidade das Bicicletas
+                    Valden Rocha - Bike Anjo Rio Branco
+                    nalisar a prática cultural do andar de bicicleta na Cidade do Rio de Janeiro
+                    Denise Pinheiro - UFRJ
+                    
+                    <div className="schedule-place">Tenda</div>
+                    Visões sobre a bicicleta
+                    O uso da bicicleta como transporte em cidades do interior do Ceará.
+                    Clivia Kellen Almeida Silva - Ciclanas Fortaleza
+                    Pedalino vê o mundo
+                    Claudio de Moura Sobral - Cicloação Recife	
+                </div>
+                    
+                <div className="schedule-time">16:30 às 17:00</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Auditório</div>
+                    Entrega prêmio A Promoção da Mobilidade por Bicicletas no Brasi
+                    Zé Lobo - Transporte Ativo
+                </div>
+                    
+                <div className="schedule-time">17:00 às 17:45</div>
+                <div className="schedule-timebox">
+                    <div className="schedule-place">Auditório</div>
+                    Palestra Magna Clarisse Linke – ITDP Brasil
+                </div>
+              </div>
+            }
+
+            {this.state.value === 2 &&
+              <div>
+                  {/* <div className="schedule-date">Domingo dia 10 de junho</div>. */}
+                  
+                    <div className="schedule-time">10:20 às 13:10</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Auditório</div>
+                      Assembleia Geral UCB
+                      UCB
+                  </div>
+                  
+                    <div className="schedule-time">13:10 às 14:30</div>
+                  <div className="schedule-timebox">
+                  </div>
+                  
+                    <div className="schedule-time">14:30 às 15:20</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Átrio </div>
+                      Bicicleta para uma cidade sensível
+                      Sheila Hempkemeyer - ABC - Associação Blumenauense Pró-Ciclovias
+                      
+                      <div className="schedule-place">Auditório </div>
+                      Paradigmas do Século XXI
+                      Renata Falzoni – André Soares – Zé Lobo. Moderação Fernando Barcellos
+                      
+                      <div className="schedule-place">Observatório</div>
+                      Pesquisa Nacional de Avaliação da Ciclabilidade
+                      Gláucia Pereira e Yuriê Baptista
+                      <div className="schedule-event-title">Terreiro</div>
+                      Avaliações Cicloviárias - Resultados
+                      O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife
+                      Daniel Valença - AMECICLO
+                      
+                      <div className="schedule-place">Tenda</div>
+                      Mecânica para Mulheres (14:30 às 16:20)
+                      Coordenação Tassia Furtado
+                      Oficinas de mecânica, problemas cotidianos
+                      Angela Soler
+                      Troca de dicas sobre mecânica, em uma linguagem de mulher para mulher
+                      Marcella Olinto - Garupa
+                  </div>
+                  
+                    <div className="schedule-time">15:30 às 16:30</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Auditório </div>
+                      Palestra Magna Ricardo Martins – Roda Mundo
+                  </div>
+                  
+                    <div className="schedule-time">16:30 às 17:45</div>
+                  <div className="schedule-timebox">
+                      <div className="schedule-place">Auditório</div>
+                      Plenária Final Bicicultura &  Encerramento e Escolha Cidade Sede 2020
+                      UCB
+                  </div>
+              </div>
+            }
+        </div>
+          
+  
+  
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default withStyles(styles)(App);

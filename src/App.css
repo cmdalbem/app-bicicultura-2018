@@ -1,0 +1,44 @@
+.schedule-timebox {
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+.schedule-time {
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    position: sticky;
+    top: 46px;
+    background: white;
+    padding: .5em;
+}
+
+.schedule-place {
+    text-transform: uppercase;
+    font-size: .8em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+.schedule-date {
+    font-size: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    /* position: sticky;
+    top: 62px; */
+    background: white;
+    padding: .5em 0;
+    z-index: 2;
+}
+
+.schedule {
+    overflow: visible;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+}
+
+.tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
