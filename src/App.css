@@ -1,32 +1,72 @@
-.schedule-timebox {
-    margin-bottom: 2em;
-    padding: 1em;
+#root {
+    /* background: #D6C5FB; */
 }
 
-.schedule-time {
-    font-weight: bold;
-    border-bottom: 1px solid lightgray;
+.schedule-timebox {
+    display: flex;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.1);
+    margin-top: .5em;
+    margin-bottom: 2em;
+
+    background: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.1);
+    margin-top: .5em;
+}
+
+.schedule-timebox--content {
+    padding: 1rem;
+}
+
+.schedule-timebox--header { 
     position: sticky;
     top: 46px;
-    background: white;
-    padding: .5em;
+    /* background: #fafafa; */
+    padding: 1.5rem 1em .5rem;
+    color: #7746ea;
 }
 
-.schedule-place {
-    text-transform: uppercase;
-    font-size: .8em;
-    margin-top: 1em;
-    margin-bottom: .5em;
+/* .schedule-timebox--header-end:before {
+    content: '—';
+} */
+
+.schedule-timebox--header-end {
+    display: none;
+}
+
+.schedule-timebox--header-start {
+    font-weight: light;
+    text-align: center;
+}
+
+.schedule-timebox--header-h {
+    font-size: 24px;
+}
+
+.schedule-timebox--header-m {
+    font-size: 12px;
+}
+
+.schedule-timebox--header-h,
+.schedule-timebox--header-m {
+    display: block;
+}
+
+.schedule-timebox--header-h:after {
+    content: 'h';
+}
+.schedule-timebox--header-m:after {
+    content: 'm';
 }
 
 .schedule-date {
-    font-size: 2em;
+    font-size: 2rem;
     margin-top: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     /* position: sticky;
     top: 62px; */
     background: white;
-    padding: .5em 0;
+    padding: .5rem 0;
     z-index: 2;
 }
 
@@ -34,11 +74,89 @@
     overflow: visible;
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid lightgray;
 }
 
 .tab-bar {
     position: sticky;
     top: 0;
     z-index: 2;
+}
+
+.schedule-session {
+    font-size: 1.2rem;
+    color: #4A4A4A;
+}
+
+.schedule-talk {
+    margin-top: 1em;
+}
+
+.schedule-author {
+    font-size: .8rem;
+    margin-top: .5em;
+}
+
+
+.schedule-place {
+    margin-top: 2em;
+    margin-bottom: .5rem;
+}
+
+.schedule-place:first-child {
+    margin-top: .5rem;
+}
+
+.badge {
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    /* color: white; */
+    /* background: black; */
+}
+
+.badge:before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    background: black;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: text-top;
+    margin-right: .5em;
+}
+
+.place-atrio .badge:before {
+    background-color: #68e8b7;
+}
+.place-atrio .badge {
+    color: #68e8b7;
+}
+
+.place-auditorio .badge:before {
+    background-color: #FF850D;
+}
+.place-auditorio .badge {
+    color: #FF850D;
+}
+
+.place-observatorio .badge:before {
+    background-color: #11B5DC;
+}
+.place-observatorio .badge {
+    color: #11B5DC;
+}
+
+.place-tenda .badge:before {
+    background-color: #e8bc4f;
+}
+.place-tenda .badge {
+    color: #e8bc4f;
+}
+
+.place-terreiro .badge:before {
+    background-color: #4A4A4A;
+}
+.place-terreiro .badge {
+    color: #4A4A4A;
 }
