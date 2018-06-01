@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import Icon from '@material-ui/core/Icon';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import SearchIcon from '@material-ui/icons/Search';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -39,39 +40,51 @@ const theme = createMuiTheme({
   },
   typography: {
     // Use the system font.
-    fontFamily:
-      '-apple-system,system-ui,BlinkMacSystemFont,' +
-      '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+    fontFamily: 'Roboto, Arial, sans-serif' 
   },
 });
-
+ 
 const styles = {
-  root: {
-    flexGrow: 1,
-    fontFamily: 'Roboto, Arial, sans-serif'
-  },
-  flex: { 
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  actionButton: {
-    position: 'fixed',
-    bottom: '24px',
-    right: '24px',
-  }
+    root: {
+        flexGrow: 1,
+        fontFamily: 'Roboto, Arial, sans-serif' 
+    },
+    flex: { 
+        flex: 1,
+    },
+    menuButton: {
+        marginLeft: -12,
+        marginRight: 20,
+    },
 };
 
-class App extends React.Component {
-  state = {
-    value: 0,
-  };
+function AddToHomeScreenIcon(props) {
+    return (
+        <SvgIcon {...props}>
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M18 1.01L8 1c-1.1 0-2 .9-2 2v3h2V5h10v14H8v-1H6v3c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM10 15h2V8H5v2h3.59L3 15.59 4.41 17 10 11.41z" />
+            <path fill="none" d="M0 0h24v24H0V0z" />
+        </SvgIcon>
+    );
+}
 
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
+class App extends React.Component {
+    state = {
+        value: 0,
+    };
+
+    handleChange = (event, value) => {
+        this.setState({ value });
+    };
+
+    onMenuBtnClick = () => {
+        alert('teste menu');
+    };
+    
+    onAddToHomeScreenBtnClick = () => {
+        alert('teste');
+    };
+
 
   render() {
     const { classes } = this.props;
@@ -83,7 +96,7 @@ class App extends React.Component {
   
           <AppBar position="static">
             <Toolbar>
-              <IconButton className={classes.menuButton} color="inherit">
+            <IconButton className={classes.menuButton} color="inherit" onClick={this.onMenuBtnClick}>
                 <MenuIcon />
               </IconButton>
               
@@ -91,8 +104,9 @@ class App extends React.Component {
                 Bicicultura 2018
               </Typography>
 
-              <IconButton className={classes.menuButton} color="inherit">
-                <SearchIcon />
+              <IconButton color="inherit" onClick={this.onAddToHomeScreenBtnClick}>
+                {/* <SearchIcon /> */}
+                <AddToHomeScreenIcon />
               </IconButton>
             </Toolbar>
           </AppBar>

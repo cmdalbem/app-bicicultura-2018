@@ -30,7 +30,24 @@
     /* background: #fafafa; */
     padding: 1.5rem 1em .5rem;
     color: #7746ea;
+    height: 100%;
 }
+
+/* .schedule-timebox--header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    padding: 1.3rem;
+    background: #7646ea;
+    display: block;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    color: white;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    color: #7646ea;
+} */
 
 /* .schedule-timebox--header-end:before {
     content: '—';
@@ -41,7 +58,6 @@
 }
 
 .schedule-timebox--header-start {
-    font-weight: 100;
     text-align: center;
 }
 
@@ -91,6 +107,7 @@
 
 .schedule-session {
     font-size: 22px;
+    line-height: 26px;
     color: #4A4A4A;
 }
 
