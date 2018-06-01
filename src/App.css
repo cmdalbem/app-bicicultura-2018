@@ -1,3 +1,9 @@
+@keyframes pulse {
+  from { opacity: 0.6;}
+  to { opacity: 1;}
+}
+
+
 #root {
     /* background: #D6C5FB; */
 }
@@ -35,7 +41,7 @@
 }
 
 .schedule-timebox--header-start {
-    font-weight: light;
+    font-weight: 100;
     text-align: center;
 }
 
@@ -45,6 +51,7 @@
 
 .schedule-timebox--header-m {
     font-size: 12px;
+    margin-top: .5em;
 }
 
 .schedule-timebox--header-h,
@@ -83,18 +90,30 @@
 }
 
 .schedule-session {
-    font-size: 1.2rem;
+    font-size: 22px;
     color: #4A4A4A;
 }
 
 .schedule-talk {
     margin-top: 1em;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
 }
 
 .schedule-author {
     font-size: .8rem;
-    margin-top: .5em;
+    margin-top: .25em;
 }
+
+/* .schedule-author:before {
+    content: 'Favoritar';
+    display: block;
+    color: purple;
+    float: right;
+    text-transform: uppercase;
+    padding: 0 0 1em 1em;
+} */
 
 
 .schedule-place {
@@ -106,7 +125,20 @@
     margin-top: .5rem;
 }
 
-.badge {
+.schedule-happening-now-badge {
+    background: red;
+    color: white;
+    padding: .5em;
+    border-radius: 25px;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-weight: bold;
+    
+    animation: pulse 0.5s infinite ease-in-out alternate;
+}
+
+.schedule-place--name {
     font-weight: bold;
     border-radius: 25px;
     font-size: 12px;
@@ -115,7 +147,7 @@
     /* background: black; */
 }
 
-.badge:before {
+.schedule-place--name:before {
     content: '';
     width: 1em;
     height: 1em;
@@ -126,37 +158,37 @@
     margin-right: .5em;
 }
 
-.place-atrio .badge:before {
+.place-atrio .schedule-place--name:before {
     background-color: #68e8b7;
 }
-.place-atrio .badge {
+.place-atrio .schedule-place--name {
     color: #68e8b7;
 }
 
-.place-auditorio .badge:before {
+.place-auditorio .schedule-place--name:before {
     background-color: #FF850D;
 }
-.place-auditorio .badge {
+.place-auditorio .schedule-place--name {
     color: #FF850D;
 }
 
-.place-observatorio .badge:before {
+.place-observatorio .schedule-place--name:before {
     background-color: #11B5DC;
 }
-.place-observatorio .badge {
+.place-observatorio .schedule-place--name {
     color: #11B5DC;
 }
 
-.place-tenda .badge:before {
+.place-tenda .schedule-place--name:before {
     background-color: #e8bc4f;
 }
-.place-tenda .badge {
+.place-tenda .schedule-place--name {
     color: #e8bc4f;
 }
 
-.place-terreiro .badge:before {
+.place-terreiro .schedule-place--name:before {
     background-color: #4A4A4A;
 }
-.place-terreiro .badge {
+.place-terreiro .schedule-place--name {
     color: #4A4A4A;
 }

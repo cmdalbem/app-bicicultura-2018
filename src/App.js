@@ -127,23 +127,25 @@ class App extends React.Component {
                                 <span className="schedule-timebox--header-h">11</span>
                                 <span className="schedule-timebox--header-m">10</span>
                             </span>
-                        </div>
+
+                            {/* <div className="schedule-happening-now-badge">Agora!</div> */}
+                        </div> 
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Mapeamento de como anda a pesquisa sobre a bicicleta no Brasil</div>
                             <div className="schedule-author">UCB - Yuriê Baptista - UCB GT de pesquisa</div>
 
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">O uso da bicicleta e seu impacto na saúde pública.</div>
                             <div className="schedule-author">John Fontenele Araujo – ACIRN - Associação de Ciclistas do Rio Grande do Norte</div>
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Ciclo Orçamentário para a ciclomobilidade no município do Rio de Janeiro</div>
                             <div className="schedule-talk">Análise das leis e dotação orçamentária para a ciclomobilidade no Rio de Janeiro</div>
@@ -166,19 +168,19 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-atrio">
-                                <span className="badge">Átrio</span>
+                                <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Ciclomensageria o cotidiano</div>
                             <div className="schedule-author">Tássia Furtado</div>
 
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Assessoramento Jurídico para OSCs em prol da Ciclomobilidade</div>
                             <div className="schedule-author">UCB - Leonardo Andrade Aragão - UCB GT Jurídico</div>
 
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">Políticas de redução de velocidade</div>
                             <div className="schedule-talk">Medidas de segurança para ciclistas e pedestres - redução de velocidade</div>
@@ -186,7 +188,7 @@ class App extends React.Component {
                             <div className="schedule-author">Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade</div>
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Bicicleta na Auto-Escola e no conteúdo escolar</div>
                             <div className="schedule-talk">Ciclomobilidade para instrutores de auto-escolas</div>
@@ -210,13 +212,13 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Como incidir pela bicicleta sobre o poder legislativo</div>
                             <div className="schedule-author">UCB - Milvo Juliano Rossarola Júnior – UCB GT Políticas Públicas</div>
 
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">Avaliações Cicloviárias</div>
                             <div className="schedule-talk">O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife</div>
@@ -225,7 +227,7 @@ class App extends React.Component {
                             <div className="schedule-author">Fabiano Faga Pacheco – AMOBICI</div>
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Bicicleta - Educação Social e Incentivo</div>
                             <div className="schedule-talk">Bike na Obra</div>
@@ -267,14 +269,14 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">CICLO CRIATIVO - Empreendedorismo & Bicicleta</div>
                             <div className="schedule-talk">O que ciclistas, urbanista, designer e ativista tem em comum? Como o Design pode incentivar a Mobilidade Ativa?</div>
                             <div className="schedule-author">Yasmim Reck - Bike Fácil</div>
 
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
                             
                             <div className="schedule-session">Politicas e Planos de Mobilidade</div>
@@ -289,7 +291,7 @@ class App extends React.Component {
 
                             
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Bicicleta: Cultura e Arte</div>
                             <div className="schedule-talk">Bicicleta: Cultura e Arte</div>
@@ -315,7 +317,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-atrio">
-                                <span className="badge">Átrio</span>
+                                <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Pedestres em pauta</div>
                             <div className="schedule-author">Moderação Thatiana Murillo – Caminha Rio</div>
@@ -328,7 +330,7 @@ class App extends React.Component {
 
                             
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             
                             <div className="schedule-session">Bicicleta na Escola</div>
@@ -336,7 +338,7 @@ class App extends React.Component {
 
                             
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">Vila Velha, um panorama</div>
                             <div className="schedule-talk">Mudanças da cidade e as percepções que elas proporcionam</div>
@@ -347,7 +349,7 @@ class App extends React.Component {
 
                             
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             
                             <div className="schedule-session">Bicicletários Quantidade e Qualidade</div>
@@ -374,7 +376,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Compartilhamento de Bicicletas</div>
                             <div className="schedule-author">Moderação Rodrigo Vitório - TA</div>
@@ -390,7 +392,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
 
                             <div className="schedule-session">Conceito dos Jogos de Bicicleta</div>
@@ -398,7 +400,7 @@ class App extends React.Component {
 
                             
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
 
                             <div className="schedule-session">O olhar através da bicicleta</div>
@@ -430,7 +432,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-atrio">
-                                <span className="badge">Átrio</span>
+                                <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Mulheres e Mobilidade</div>
                             <div className="schedule-author">Moderação Aline Cavalcante - Ciclocidade</div>
@@ -446,14 +448,14 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Contagens de ciclistas: monitoramento do uso de bicicletas em escala municipal</div>
                             <div className="schedule-author">Thiago Benicchio – ITDP Brasil</div>
 
 
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Cicloativismo e ações políticas</div>
                             <div className="schedule-author">Moderação Felipe Alves - UCB</div>
@@ -469,7 +471,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Como Promover a Mobilidade Ativa nas Eleições de 2018</div>
                             <div className="schedule-author">André Geraldo Soares e Ana Carolina Nunes - UCB e SampaPé</div>
@@ -491,7 +493,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Mulheres no Cicloativismo (11:20 — 13:10)</div>
                             <div className="schedule-talk">Mapeamento da participação de mulheres no movimento cicloativista</div>
@@ -503,14 +505,14 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Ciclomobilidade na Agenda Politica Niteroi</div>
                             <div className="schedule-author">Fátima Priscila Morela Edra - Universidade Federal Fluminense – UFF e Sérgio Franco – Mobilidade Niterói</div>
 
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Soluções para a bicicleta</div>
                             <div className="schedule-talk">Bicicletaria Cultural</div>
@@ -536,7 +538,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Campanhas Educativas e Motivacionais</div>
                             <div className="schedule-talk">Campanha "No Trânsito Eu Compartilho Respeito"</div>
@@ -549,7 +551,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">ções de Bike em Pirenópolis</div>
                             <div className="schedule-author">Larissa Cantarelli – Bike Anjo Pirenópolis</div>
@@ -589,7 +591,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-atrio">
-                                <span className="badge">Átrio</span>
+                                <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Mobilidade de Baixo Carbono</div>
                             <div className="schedule-talk">Como a bicicleta e pode contribuir com um futuro de baixo carbono</div>
@@ -597,7 +599,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Cicloturismo</div>
                             <div className="schedule-author">Moderação Ricardo Martins - RodaMundo</div>
@@ -613,7 +615,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Ativismo e Academia</div>
                             <div className="schedule-author">Moderação Vivan Garelli - PPGA UFF</div>
@@ -632,7 +634,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Indicadores sobre o respeito à faixa de pedestres em Brasília</div>
                             <div className="schedule-author">Jonas Bertucci – Rodas da Paz</div>
@@ -654,7 +656,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Cicloturimo Roteiros e Estudos</div>
                             <div className="schedule-author">Moderação Ricardo Martins - RodaMundo</div>
@@ -670,7 +672,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Pesquisas Ciclomobilidade</div>
                             <div className="schedule-author">Moderação Rene Fernandes - FGV</div>
@@ -692,7 +694,7 @@ class App extends React.Component {
 
 
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Visões sobre a bicicleta</div>
                             <div className="schedule-talk">O uso da bicicleta como transporte em cidades do interior do Ceará.</div>
@@ -718,7 +720,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Entrega prêmio A Promoção da Mobilidade por Bicicletas no Brasi</div>
                             <div className="schedule-author">Zé Lobo - Transporte Ativo</div>
@@ -740,7 +742,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Palestra Magna Clarisse Linke – ITDP Brasil</div>
                         </div>
@@ -767,7 +769,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Assembleia Geral UCB</div>
                             UCB
@@ -807,28 +809,28 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-atrio">
-                                <span className="badge">Átrio</span>
+                                <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Bicicleta para uma cidade sensível</div>
                             <div className="schedule-author">Sheila Hempkemeyer - ABC - Associação Blumenauense Pró-Ciclovias</div>
 
 
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Paradigmas do Século XXI</div>
                             <div className="schedule-author">Renata Falzoni – André Soares – Zé Lobo. Moderação Fernando Barcellos</div>
 
 
                             <div className="schedule-place place-observatorio">
-                                <span className="badge">Observatório</span>
+                                <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Pesquisa Nacional de Avaliação da Ciclabilidade</div>
                             <div className="schedule-author">Gláucia Pereira e Yuriê Baptista</div>
                             
 
                             <div className="schedule-place place-terreiro">
-                                <span className="badge">Terreiro</span>
+                                <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">Avaliações Cicloviárias - Resultados</div>
                             
@@ -837,7 +839,7 @@ class App extends React.Component {
 
                             
                             <div className="schedule-place place-tenda">
-                                <span className="badge">Tenda</span>
+                                <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Mecânica para Mulheres (14:30 — 16:20)</div>
                             <div className="schedule-author">Coordenação Tassia Furtado</div>
@@ -865,7 +867,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Palestra Magna Ricardo Martins – Roda Mundo</div>
                         </div>
@@ -886,7 +888,7 @@ class App extends React.Component {
 
                         <div className="schedule-timebox--content">
                             <div className="schedule-place place-auditorio">
-                                <span className="badge">Auditório</span>
+                                <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Plenária Final Bicicultura & Encerramento e Escolha Cidade Sede 2020</div>
                             <div className="schedule-author">UCB</div>
