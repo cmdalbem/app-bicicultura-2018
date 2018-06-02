@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import SvgIcon from '@material-ui/core/SvgIcon';
 // import SearchIcon from '@material-ui/icons/Search';
+// import TimeIcon from '@material-ui/icons/AccessTime';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
@@ -153,12 +154,14 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Mapeamento de como anda a pesquisa sobre a bicicleta no Brasil</div>
                             <div className="schedule-author">UCB - Yuriê Baptista - UCB GT de pesquisa</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-place place-terreiro">
                                 <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">O uso da bicicleta e seu impacto na saúde pública.</div>
                             <div className="schedule-author">John Fontenele Araujo – ACIRN - Associação de Ciclistas do Rio Grande do Norte</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-place place-tenda">
                                 <span className="schedule-place--name">Tenda</span>
@@ -166,9 +169,11 @@ class App extends React.Component {
                             <div className="schedule-session">Ciclo Orçamentário para a ciclomobilidade no município do Rio de Janeiro</div>
                             <div className="schedule-talk">Análise das leis e dotação orçamentária para a ciclomobilidade no Rio de Janeiro</div>
                             <div className="schedule-author">Carolina Queiroz - MobiRio</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Ciclo Orçamentário</div>
                             <div className="schedule-author">Carolina Queiroz - MobiRio</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -190,12 +195,14 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Ciclomensageria o cotidiano</div>
                             <div className="schedule-author">Tássia Furtado</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-place place-observatorio">
                                 <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Assessoramento Jurídico para OSCs em prol da Ciclomobilidade</div>
                             <div className="schedule-author">UCB - Leonardo Andrade Aragão - UCB GT Jurídico</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-terreiro">
@@ -204,8 +211,10 @@ class App extends React.Component {
                             <div className="schedule-session">Políticas de redução de velocidade</div>
                             <div className="schedule-talk">Medidas de segurança para ciclistas e pedestres - redução de velocidade</div>
                             <div className="schedule-author">Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade</div>
+                            {/* <StarBorderIcon/> */}
                             <div className="schedule-talk">Aplicação de dinâmicas de planejamento sobre advocacy</div>
                             <div className="schedule-author">Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-tenda">
@@ -214,8 +223,10 @@ class App extends React.Component {
                             <div className="schedule-session">Bicicleta na Auto-Escola e no conteúdo escolar</div>
                             <div className="schedule-talk">Ciclomobilidade para instrutores de auto-escolas</div>
                             <div className="schedule-author">Pedro Daniel Amaral Arruda - CENTEC - Centro de Ensino Técnico de Trânsito CWB</div>
+                            {/* <StarBorderIcon/> */}
                             <div className="schedule-talk">Projeto Conhecer Pedalando - Possibilidades de inserção da bicicleta como conteúdo escolar</div>
                             <div className="schedule-author">Bruno Wilwert Tomio - Conhecer Pedalando</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -237,6 +248,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Como incidir pela bicicleta sobre o poder legislativo</div>
                             <div className="schedule-author">UCB - Milvo Juliano Rossarola Júnior – UCB GT Políticas Públicas</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-place place-terreiro">
                                 <span className="schedule-place--name">Terreiro</span>
@@ -244,8 +256,10 @@ class App extends React.Component {
                             <div className="schedule-session">Avaliações Cicloviárias</div>
                             <div className="schedule-talk">O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife</div>
                             <div className="schedule-author">Daniel Valença - AMECICLO</div>
+                            {/* <StarBorderIcon/> */}
                             <div className="schedule-talk">Nova proposta metodológica de avaliação de vias ciclísticas. Fabiano Faga Pacheco – AMOBICI</div>
                             <div className="schedule-author">Fabiano Faga Pacheco – AMOBICI</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-place place-tenda">
                                 <span className="schedule-place--name">Tenda</span>
@@ -253,8 +267,10 @@ class App extends React.Component {
                             <div className="schedule-session">Bicicleta - Educação Social e Incentivo</div>
                             <div className="schedule-talk">Bike na Obra</div>
                             <div className="schedule-author">Murilo Rodrigues - Bike Anjo Belém</div>
+                            {/* <StarBorderIcon/> */}
                             <div className="schedule-talk">Destinação de Bicicletas roubadas e recuperadas</div>
                             <div className="schedule-author">Mauro Soares Tavares - Programa Rio - Estado da Bicicleta/SETRANS RJ</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
                         
@@ -295,6 +311,7 @@ class App extends React.Component {
                             <div className="schedule-session">CICLO CRIATIVO - Empreendedorismo & Bicicleta</div>
                             <div className="schedule-talk">O que ciclistas, urbanista, designer e ativista tem em comum? Como o Design pode incentivar a Mobilidade Ativa?</div>
                             <div className="schedule-author">Yasmim Reck - Bike Fácil</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-place place-terreiro">
                                 <span className="schedule-place--name">Terreiro</span>
@@ -304,12 +321,15 @@ class App extends React.Component {
                             
                             <div className="schedule-talk">Projeto Parque Brasil</div>
                             <div className="schedule-author">Débora Reis Fontes – CSC-RJ e Andrea Borges - UNISUAM</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Plano de Mobilidade Ativa do Distrito Federal - PMA-DF</div>
                             <div className="schedule-author">Priscila Miti Yajima – SEMOB - DF</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Diretrizes para política pública de Mobilidade Sustentável, o Programa Ciclovida</div>
                             <div className="schedule-author">Silvana Nakamori – UFPR / CicloIguaçu</div>
+                            {/* <StarBorderIcon/> */}
 
                             
                             <div className="schedule-place place-tenda">
@@ -319,9 +339,11 @@ class App extends React.Component {
                             
                             <div className="schedule-talk">Bicicleta: Cultura e Arte</div>
                             <div className="schedule-author">Giovani Rafael Seibel - COLMEIA - Coletivo Laboral Multicultural</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">A Experiência do Pedal Sonoro</div>
                             <div className="schedule-author">Luís Araujo – Pedal Sonoro</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -344,12 +366,15 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Pedestres em pauta</div>
                             <div className="schedule-author">Moderação: Thatiana Murillo – Caminha Rio</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Multas a pedestres e ciclistas - Como reagir?</div>
                             <div className="schedule-author">Glaucia Pereira e Ana Carolina Nunes – Cidadeapé</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Super-Ando</div>
                             <div className="schedule-author">Super-Ando</div>
+                            {/* <StarBorderIcon/> */}
 
                             
                             <div className="schedule-place place-observatorio">
@@ -358,6 +383,7 @@ class App extends React.Component {
                             
                             <div className="schedule-talk">Bicicleta na Escola</div>
                             <div className="schedule-author">Ana Destri - AMOBICI</div>
+                            {/* <StarBorderIcon/> */}
 
                             
                             <div className="schedule-place place-terreiro">
@@ -368,9 +394,11 @@ class App extends React.Component {
 
                             <div className="schedule-talk">Mudanças da cidade e as percepções que elas proporcionam</div>
                             <div className="schedule-author">Fernando Braga – Ciclistas Urbanos Capixabas</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Estacionamento facilita o acesso de quem adota a bicicleta como meio de transporte</div>
                             <div className="schedule-author">Pollyana Martins – Ciclistas Vila-Velhenses</div>
+                            {/* <StarBorderIcon/> */}
 
                             
                             <div className="schedule-place place-tenda">
@@ -381,9 +409,11 @@ class App extends React.Component {
                             
                             <div className="schedule-talk">Como ampliar os bicicletários adequados na sua cidade</div>
                             <div className="schedule-author">Felipe Alves - UCB GT Infraestrutura</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">É possível estacionar a bicicleta "de boa"?</div>
                             <div className="schedule-author">Hannah Kny e Cristiano Dalbem – Bike de Boa</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -405,15 +435,18 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Compartilhamento de Bicicletas</div>
                             <div className="schedule-author">Moderação: Rodrigo Vitório - TA</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Coolabici</div>
                             <div className="schedule-author">
+                            {/* <StarBorderIcon/> */}
                                 Gheysa Caroline Prado - UFPR
                                 Marina Caus dos Santos - Thaisa Meurer Piovezani - Mariana de Souza - Fernando Reinaldo Contin Falkiewicz
                             </div>
                             
                             <div className="schedule-talk">Bicicletar Corporativo</div>
                             <div className="schedule-author">Aurélie Dos Santos - Serttel </div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-terreiro">
@@ -422,6 +455,7 @@ class App extends React.Component {
 
                             <div className="schedule-talk">Conceito dos Jogos de Bicicleta</div>
                             <div className="schedule-author">Ana Carboni – Bike Anjo Niterói</div>
+                            {/* <StarBorderIcon/> */}
 
                             
                             <div className="schedule-place place-tenda">
@@ -431,9 +465,11 @@ class App extends React.Component {
                             <div className="schedule-session">O olhar através da bicicleta</div>
                             <div className="schedule-talk">Pedal da ACERGS</div>
                             <div className="schedule-author">Rafael Santos – ACERGS Associação dos Cegos do Estado do Rio Grande do Sul</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">ODKV</div>
                             <div className="schedule-author">Maria Aline De Oliveira Gouveia e Barbara de Vasconcelos Barbosa - Bike Anjos Campina Grande e Recife</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
                 </div>
@@ -461,15 +497,19 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Mulheres e Mobilidade</div>
                             <div className="schedule-author">Moderação: Aline Cavalcante - Ciclocidade</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Pedala, mana!</div>
                             <div className="schedule-author">Melissa Noguchi e Lorena Costa– Bike Anjo Belém</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Festival "100Gurias100Medo"</div>
                             <div className="schedule-author">Naone Lopes e Caro Pierro – 100gurias100medo</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Mulheres Caminhantes, auditoria de segurança de gênero e caminhabilidade</div>
                             <div className="schedule-author">Ana Carolina Nunes e Leticia Sabino – SampaPé</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-auditorio">
@@ -477,6 +517,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Contagens de ciclistas: monitoramento do uso de bicicletas em escala municipal</div>
                             <div className="schedule-author">Thiago Benicchio – ITDP Brasil</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-observatorio">
@@ -484,15 +525,19 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Cicloativismo e ações políticas</div>
                             <div className="schedule-author">Moderação: Felipe Alves - UCB</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Prefeitura de Curitiba extinguiu infraestruturas "Calçadas Verdes"</div>
                             <div className="schedule-author">Joao Pedro Bazzo Vieira - Cicloiguaçu</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Memória e historia do cicloativismo no Brasil</div>
                             <div className="schedule-author">Fernando Barcellos – UCB GT Pesquisa</div>
+                            {/* <StarBorderIcon/> */}
                                 
                             <div className="schedule-talk">Contexto atual e cicloativismo</div>
                             <div className="schedule-author">Lígia Pereira - AMECICLO</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-tenda">
@@ -500,6 +545,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Como Promover a Mobilidade Ativa nas Eleições de 2018</div>
                             <div className="schedule-author">André Geraldo Soares e Ana Carolina Nunes - UCB e SampaPé</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
                     
@@ -523,12 +569,15 @@ class App extends React.Component {
                             <div className="schedule-session">Mulheres no Cicloativismo (11:20 — 13:10)</div>
                             <div className="schedule-talk">Mapeamento da participação de mulheres no movimento cicloativista</div>
                             <div className="schedule-author">Roberta Raquel - UFSC</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Dificuldades e facilidades de estar a frente de uma diretoria anterior masculina</div>
                             <div className="schedule-author">Aspásia Mariana - UCB GT Gênero / Ciclovida Fortaleza</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Leis que não são em prol da segurança e da vida das mulheres</div>
                             <div className="schedule-author">Aspásia Mariana - UCB GT Gênero / Ciclovida Fortaleza</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-observatorio">
@@ -536,6 +585,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Ciclomobilidade na Agenda Politica Niteroi</div>
                             <div className="schedule-author">Fátima Priscila Morela Edra - Universidade Federal Fluminense – UFF e Sérgio Franco – Mobilidade Niterói</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-tenda">
@@ -544,9 +594,11 @@ class App extends React.Component {
                             <div className="schedule-session">Soluções para a bicicleta</div>
                             <div className="schedule-talk">Bicicletaria Cultural</div>
                             <div className="schedule-author">Patricia Valverde – Bicicletaria Cultural</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Estações de Reparos Rápidos de Bicicleta</div>
                             <div className="schedule-author">Paulo Aguiar – Pedala Manaus</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -572,9 +624,11 @@ class App extends React.Component {
                             
                             <div className="schedule-talk">Boca no Trombone - Palestras em empresas privadas e públicas para um público não ciclista</div>
                             <div className="schedule-author">Nadia Aguiar – Pedala Manaus</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Eu Vou de Bicicleta</div>
                             <div className="schedule-author">Everaldo Moreira Fabrício - BikeMotiva</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-tenda">
@@ -582,6 +636,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">ções de Bike em Pirenópolis</div>
                             <div className="schedule-author">Larissa Cantarelli – Bike Anjo Pirenópolis</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -623,6 +678,7 @@ class App extends React.Component {
                             <div className="schedule-session">Mobilidade de Baixo Carbono</div>
                             <div className="schedule-talk">Como a bicicleta e pode contribuir com um futuro de baixo carbono</div>
                             <div className="schedule-author">Aline Cavalcante e João Lacerda – Coalizão Clima e Mobilidade e Ana Abreu - Engajamundo</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-auditorio">
@@ -630,15 +686,19 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Cicloturismo</div>
                             <div className="schedule-author">Moderação: Ricardo Martins - RodaMundo</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Equipamentos para Viagens de Bicicleta</div>
                             <div className="schedule-author">Fábio Eduardo da Silva - Clube de Cicloturismo do Brasil</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">De ocupação a ocupação uma pedalada Brasília Olinda</div>
                             <div className="schedule-author">Mateus Lima - Bicicentro Comunitário</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Viajar sola</div>
                             <div className="schedule-author">María Paz Castillo - Pedalea x la calle - Chile</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-observatorio">
@@ -646,18 +706,23 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Ativismo e Academia</div>
                             <div className="schedule-author">Moderação: Vivan Garelli - PPGA UFF</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Processo de concepção e implementação da ciclovia da Uni.Fed. de Itajubá</div>
                             <div className="schedule-author">Pedro Torres de Melo Pedrosa - UNIFEI</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Movimentos sociais contemporâneos e inclusão: lições do cicloativismo no Rio</div>
                             <div className="schedule-author">Naomi Orton – PUC Rio</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Ciclomobilidade: Avaliação e Qualificação do Prog. Ciclo da RMGV- Vila Velha – ES</div>
                             <div className="schedule-author">Pollyana Martins Rodrigues – Ciclistas Vila-Velhenses</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Ciclorrotas de Aracaju</div>
                             <div className="schedule-author">Sayuri Silva Dantas de Oliveira – Associação Ciclo Urbano</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-tenda">
@@ -665,6 +730,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Indicadores sobre o respeito à faixa de pedestres em Brasília</div>
                             <div className="schedule-author">Jonas Bertucci – Rodas da Paz</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -687,15 +753,19 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Cicloturimo Roteiros e Estudos</div>
                             <div className="schedule-author">Moderação: Ricardo Martins - RodaMundo</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Análise comparativa entre os estudos internacionais e nacionais Cicloturismo</div>
                             <div className="schedule-author">Fernanda Monteiro Lobão de Deus e Fátima Priscila Edra - UFF</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Papo sobre Circuitos de Cicloturismo</div>
                             <div className="schedule-author">Ivo Leonardo Schmitz - Clube de Cicloturismo do Brasil</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Criação de roteiros de cicloturismo urbano</div>
                             <div className="schedule-author">Gustavo Carvalho - Kuritibike</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-observatorio">
@@ -703,21 +773,27 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Pesquisas Ciclomobilidade</div>
                             <div className="schedule-author">Moderação: Rene Fernandes - FGV</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Donde vem, pronde vão - Cruzamento de pesquisas em Recife</div>
                             <div className="schedule-author">Daniel Valença - AMECICLO</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Simulador de vantagens da mobilidade ativa</div>
                             <div className="schedule-author">José Carlos Assunção Belotto – Ciclovida / UFPR</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Como diferentes aspectos da infraestrutura influenciam ciclistas.</div>
                             <div className="schedule-author">Joao Pedro Bazzo Vieira - CicloIguaçu</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Tarauacá Cidade das Bicicletas</div>
                             <div className="schedule-author">Valden Rocha - Bike Anjo Rio Branco</div>
+                            {/* <StarBorderIcon/> */}
 
                             <div className="schedule-talk">Analisar a prática cultural do andar de bicicleta na Cidade do Rio de Janeiro</div>
                             <div className="schedule-author">Denise Pinheiro - UFRJ</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-tenda">
@@ -726,9 +802,11 @@ class App extends React.Component {
                             <div className="schedule-session">Visões sobre a bicicleta</div>
                             <div className="schedule-talk">O uso da bicicleta como transporte em cidades do interior do Ceará.</div>
                             <div className="schedule-author">Clivia Kellen Almeida Silva - Ciclanas Fortaleza</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Pedalino vê o mundo</div>
                             <div className="schedule-author">Claudio de Moura Sobral - Cicloação Recife </div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -751,6 +829,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Entrega prêmio A Promoção da Mobilidade por Bicicletas no Brasi</div>
                             <div className="schedule-author">Zé Lobo - Transporte Ativo</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -840,6 +919,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Bicicleta para uma cidade sensível</div>
                             <div className="schedule-author">Sheila Hempkemeyer - ABC - Associação Blumenauense Pró-Ciclovias</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-auditorio">
@@ -847,6 +927,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Paradigmas do Século XXI</div>
                             <div className="schedule-author">Renata Falzoni – André Soares – Zé Lobo. Moderação: Fernando Barcellos</div>
+                            {/* <StarBorderIcon/> */}
 
 
                             <div className="schedule-place place-observatorio">
@@ -854,6 +935,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Pesquisa Nacional de Avaliação da Ciclabilidade</div>
                             <div className="schedule-author">Gláucia Pereira e Yuriê Baptista</div>
+                            {/* <StarBorderIcon/> */}
                             
 
                             <div className="schedule-place place-terreiro">
@@ -863,6 +945,7 @@ class App extends React.Component {
                             
                             <div className="schedule-talk">O Índice de Desenvolvimento Cicloviário IDECiclo Região Metropolitana do Recife</div>
                             <div className="schedule-author">Daniel Valença - AMECICLO</div>
+                            {/* <StarBorderIcon/> */}
 
                             
                             <div className="schedule-place place-tenda">
@@ -870,12 +953,15 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Mecânica para Mulheres (14:30 — 16:20)</div>
                             <div className="schedule-author">Coordenação Tassia Furtado</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Oficinas de mecânica, problemas cotidianos</div>
                             <div className="schedule-author">Angela Soler</div>
+                            {/* <StarBorderIcon/> */}
                             
                             <div className="schedule-talk">Troca de dicas sobre mecânica, em uma linguagem de mulher para mulher</div>
                             <div className="schedule-author">Marcella Olinto - Garupa</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
 
@@ -919,6 +1005,7 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Plenária Final Bicicultura & Encerramento e Escolha Cidade Sede 2020</div>
                             <div className="schedule-author">UCB</div>
+                            {/* <StarBorderIcon/> */}
                         </div>
                     </div>
                 </div>

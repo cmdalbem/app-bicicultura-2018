@@ -25,10 +25,11 @@
 .schedule-timebox--header { 
     position: sticky;
     top: 46px;
-    /* background: #fafafa; */
-    padding: 1.5rem 1em .5rem;
+    text-align: center;
+    padding: 1.5rem 0 .5rem 1em;
     color: #7746ea;
     height: 100%;
+    font-size: 22px;
 }
 
 /* .schedule-timebox--header {
@@ -72,7 +73,7 @@
 
 .schedule-timebox--header-h,
 .schedule-timebox--header-m {
-    font-size: 24px;
+    /* font-size: 24px; */
 }
 
 .schedule-timebox--header-h:after {
