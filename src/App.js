@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import SimpleSnackbar from './SimpleSnackbar';
+
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -35,6 +37,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -99,18 +103,9 @@ class App extends React.Component {
     window.addEventListener('beforeinstallprompt', e => {
       // Prevents automatic banner
       // e.preventDefault();
-      // _deferredPWAPrompt = e;
-      // $('.howToInstallBtn').css({'font-weight': 'bold'});
 
       // Force to always prompt
       e.prompt();
-
-      // Event example:
-      // window.gtag('event', 'video_auto_play_start', {
-      //   'event_label': 'My promotional video',
-      //   'event_category': 'video_auto_play',
-      //   'non_interaction': true
-      // });
 
       window.gtag('event', 'beforeinstallprompt - popped', {'event_category': 'PWA'});
       e.userChoice.then(function (choiceResult) {
@@ -124,28 +119,67 @@ class App extends React.Component {
         }
       });
     });
+    
     window.addEventListener('appinstalled', e => {
       window.gtag('event', 'appinstalled', {'event_category': 'PWA'});
     });
+
+    window.addEventListener('pwa:newContent', e => {
+      console.log('pwa:newContent'); 
+
+      this.notify('Há uma atualização disponível para este app! Recarregue a página para usá-lo.');
+    });
+    window.addEventListener('pwa:offlineReady', e => {
+      console.log('pwa:offlineReady');
+
+      this.notify('Conteúdo disponível offline.');
+    });
+    window.addEventListener('pwa:offlineMode', e => {
+      console.log('pwa:offlineMode');
+
+      this.notify('Você está offline.');
+    });
+  }
+
+  componentDidMount = () => {
+    // this.notify('All done');
   }
 
   state = {
     value: 0,
-    dialogOpen: false
+    isDialogOpen: false,
+    snackbar: {
+      isOpen: false
+    }
+  };
+
+  notify = message => {
+    this.setState({
+      snackbar: {
+        isOpen: true,
+        message: message
+      }
+    });
+  };
+
+  onAddToHomeScreenBtnClick = () => {
+    this.setState({ isDialogOpen: true });
+
+    window.gtag('event', 'Clicked on Add To Homescreen icon');
   };
 
   handleTabChange = (event, value) => {
     this.setState({ value });
   };
 
-  onAddToHomeScreenBtnClick = () => {
-    this.setState({ dialogOpen: true });
-
-    window.gtag('event', 'Clicked on Add To Homescreen icon');
+  handleDialogClose = () => {
+    this.setState({ isDialogOpen: false });
   };
 
-  handleDialogClose = () => {
-    this.setState({ dialogOpen: false });
+  handleSnackbarClose = (event, reason) => {
+    this.setState({
+      snackbar: {isOpen: false }
+    });
   };
 
 
@@ -179,9 +213,40 @@ class App extends React.Component {
             </Toolbar>
           </AppBar>
 
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            open={this.state.snackbar.isOpen}
+            autoHideDuration={6000}
+            onClose={this.handleClose}
+            ContentProps={{
+              'aria-describedby': 'message-id',
+            }}
+            message={
+              <span id="message-id">
+                {this.state.snackbar.message}
+              </span>}
+            action={[
+              // <Button key="undo" color="secondary" size="small" onClick={this.handleSnackbarClose}>
+              //   UNDO
+              // </Button>,
+
+              <IconButton
+                key="close"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={this.handleSnackbarClose}
+              >
+                <CloseIcon />
+              </IconButton>,
+            ]}
+          />
           
           <Dialog
-            open={this.state.dialogOpen}
+            open={this.state.isDialogOpen}
             fullScreen={isMobile}
           >
             <DialogTitle>
