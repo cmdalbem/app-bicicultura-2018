@@ -1,0 +1,15 @@
+{
+  "short_name": "Bicicultura 2018",
+  "name": "Bicicultura 2018",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#7846EA",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/appicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
