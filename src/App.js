@@ -127,7 +127,7 @@ class App extends React.Component {
 
           <AppBar position="static">
             <Toolbar>
-              {/* <IconButton className={classes.menuButton} color="inherit" onClick={this.onMenuBtnClick}>
+              {/* <IconButton className={classes.menuButton} color="inherit" onClick={this.onMenuBtnClick} aria-label="Menu">
                 <MenuIcon />
               </IconButton> */}
 
@@ -136,7 +136,7 @@ class App extends React.Component {
               </Typography>
 
               { this.showPWAButton &&
-                <IconButton color="inherit" onClick={this.onAddToHomeScreenBtnClick}>
+                <IconButton color="inherit" onClick={this.onAddToHomeScreenBtnClick} aria-label="Adicionar à tela inicial">
                   {/* <SearchIcon /> */}
                   <AddToHomeScreenIcon />
                 </IconButton>
@@ -155,7 +155,7 @@ class App extends React.Component {
 
             <DialogContent>
               <div style={{textAlign: 'center'}}>
-                <img src="/appicon-128x128.png" />
+                <img alt="" src="./img/appicon-128x128.png" />
               </div>
 
               <DialogContentText>
@@ -167,9 +167,9 @@ class App extends React.Component {
                  celular. É só escolher o seu navegador abaixo pra ver como fazer:
               </DialogContentText>
                <div className={classes.root}>
-                <ExpansionPanel>
+                <ExpansionPanel> 
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <img src="/icon_browser_chrome.png"/> Chrome
+                    <img alt="" src="./img/icon_browser_chrome.png"/> Chrome
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <ol>
@@ -181,7 +181,7 @@ class App extends React.Component {
                 
                 <ExpansionPanel>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <img src="/icon_browser_safari.png"/> Safari
+                    <img alt="" src="./img/icon_browser_safari.png"/> Safari
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails> 
                     <ol>
@@ -193,7 +193,7 @@ class App extends React.Component {
 
                 <ExpansionPanel>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <img src="/icon_browser_firefox.png"/> Firefox
+                    <img alt="" src="./img/icon_browser_firefox.png"/> Firefox
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <ol>
