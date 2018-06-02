@@ -154,13 +154,17 @@ class App extends React.Component {
             </DialogTitle>
 
             <DialogContent>
+              <div style={{textAlign: 'center'}}>
+                <img src="/appicon-128x128.png" />
+              </div>
+
               <DialogContentText>
                 Este é um Web App, que é melhor do que um App: você não precisa instalá-lo, é só acessar direto 
                 pelo navegador!
               </DialogContentText>
               <DialogContentText>
-                Você pode adicionar um atalho para este app na tela inicial do seu
-                 celular, é só escolher o seu navegador abaixo pra ver como fazer:
+                Mas se quiser você pode adicionar um atalho na tela inicial do seu
+                 celular. É só escolher o seu navegador abaixo pra ver como fazer:
               </DialogContentText>
                <div className={classes.root}>
                 <ExpansionPanel>
