@@ -169,6 +169,7 @@ class App extends React.Component {
   };
 
   handleTabChange = (event, value) => {
+    window.scrollTo(0, 0);
     this.setState({ value });
   };
 
