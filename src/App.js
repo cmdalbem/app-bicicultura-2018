@@ -256,7 +256,7 @@ class App extends React.Component {
 
             <DialogContent>
               <div style={{textAlign: 'center'}}>
-                <img alt="" src="./img/appicon-128x128.png" />
+                <img alt="" src="./img/appicon-64x64.png" />
               </div>
 
               <DialogContentText>
