@@ -60,26 +60,26 @@
 }
 
 .schedule-timebox--header-h {
-    font-size: 24px;
+    /* font-size: 24px; */
     /* font-size: 8vw; */
 }
 
 .schedule-timebox--header-m {
-    font-size: 12px;
+    /* font-size: 12px; */
     /* font-size: 4vw; */
-    margin-top: .5rem;
+    /* margin-top: .5rem; */
 }
 
 .schedule-timebox--header-h,
 .schedule-timebox--header-m {
-    display: block;
+    font-size: 24px;
 }
 
 .schedule-timebox--header-h:after {
     content: 'h';
 }
 .schedule-timebox--header-m:after {
-    content: 'm';
+    content: '';
 }
 
 .schedule-date {
@@ -132,6 +132,10 @@
     padding: 0 0 1em 1em;
 } */
 
+.schedule-author+button {
+    float: right;
+}
+
 
 .schedule-place {
     margin-top: 2em;
@@ -176,10 +180,10 @@
 }
 
 .place-atrio .schedule-place--name:before {
-    background-color: #68e8b7;
+    background-color: #1cca87;
 }
 .place-atrio .schedule-place--name {
-    color: #68e8b7;
+    color: #1cca87;
 }
 
 .place-auditorio .schedule-place--name:before {
@@ -197,17 +201,17 @@
 }
 
 .place-tenda .schedule-place--name:before {
-    background-color: #e8bc4f;
+    background-color: #f1b213;
 }
 .place-tenda .schedule-place--name {
-    color: #e8bc4f;
+    color: #f1b213;
 }
 
 .place-terreiro .schedule-place--name:before {
-    background-color: #4A4A4A;
+    background-color: #af621c;
 }
 .place-terreiro .schedule-place--name {
-    color: #4A4A4A;
+    color: #af621c;
 }
 
 

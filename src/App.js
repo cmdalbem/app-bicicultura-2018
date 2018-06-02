@@ -9,7 +9,9 @@ import Button from '@material-ui/core/Button';
 
 import Icon from '@material-ui/core/Icon';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -96,7 +98,7 @@ class App extends React.Component {
   
           <AppBar position="static">
             <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" onClick={this.onMenuBtnClick}>
+              <IconButton className={classes.menuButton} color="inherit" onClick={this.onMenuBtnClick}>
                 <MenuIcon />
               </IconButton>
               
@@ -119,9 +121,9 @@ class App extends React.Component {
             textColor="primary"
             centered
             >
-            <Tab label="8 de junho" />
-            <Tab label="9 de junho" />
-            <Tab label="10 de junho" />
+                <Tab label="Sexta" />
+                <Tab label="Sábado" />
+                <Tab label="Domingo" />
             </Tabs>
         </Paper>
         
@@ -163,6 +165,8 @@ class App extends React.Component {
                             </div>
                             <div className="schedule-session">Ciclo Orçamentário para a ciclomobilidade no município do Rio de Janeiro</div>
                             <div className="schedule-talk">Análise das leis e dotação orçamentária para a ciclomobilidade no Rio de Janeiro</div>
+                            <div className="schedule-author">Carolina Queiroz - MobiRio</div>
+
                             <div className="schedule-talk">Ciclo Orçamentário</div>
                             <div className="schedule-author">Carolina Queiroz - MobiRio</div>
                         </div>
@@ -193,13 +197,16 @@ class App extends React.Component {
                             <div className="schedule-session">Assessoramento Jurídico para OSCs em prol da Ciclomobilidade</div>
                             <div className="schedule-author">UCB - Leonardo Andrade Aragão - UCB GT Jurídico</div>
 
+
                             <div className="schedule-place place-terreiro">
                                 <span className="schedule-place--name">Terreiro</span>
                             </div>
                             <div className="schedule-session">Políticas de redução de velocidade</div>
                             <div className="schedule-talk">Medidas de segurança para ciclistas e pedestres - redução de velocidade</div>
+                            <div className="schedule-author">Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade</div>
                             <div className="schedule-talk">Aplicação de dinâmicas de planejamento sobre advocacy</div>
                             <div className="schedule-author">Flavio Soares, Aline Cavalcante e Ana Carolina Nunes - Ciclocidade</div>
+
 
                             <div className="schedule-place place-tenda">
                                 <span className="schedule-place--name">Tenda</span>
@@ -301,13 +308,15 @@ class App extends React.Component {
                             <div className="schedule-talk">Plano de Mobilidade Ativa do Distrito Federal - PMA-DF</div>
                             <div className="schedule-author">Priscila Miti Yajima – SEMOB - DF</div>
                             
-                            <div className="schedule-talk">Diretrizes para política pública de Mobilidade Sustentável, o Programa Ciclovida Silvana Nakamori – UFPR / CicloIguaçu</div>
+                            <div className="schedule-talk">Diretrizes para política pública de Mobilidade Sustentável, o Programa Ciclovida</div>
+                            <div className="schedule-author">Silvana Nakamori – UFPR / CicloIguaçu</div>
 
                             
                             <div className="schedule-place place-tenda">
                                 <span className="schedule-place--name">Tenda</span>
                             </div>
                             <div className="schedule-session">Bicicleta: Cultura e Arte</div>
+                            
                             <div className="schedule-talk">Bicicleta: Cultura e Arte</div>
                             <div className="schedule-author">Giovani Rafael Seibel - COLMEIA - Coletivo Laboral Multicultural</div>
                             
@@ -334,7 +343,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Pedestres em pauta</div>
-                            <div className="schedule-author">Moderação Thatiana Murillo – Caminha Rio</div>
+                            <div className="schedule-author">Moderação: Thatiana Murillo – Caminha Rio</div>
 
                             <div className="schedule-talk">Multas a pedestres e ciclistas - Como reagir?</div>
                             <div className="schedule-author">Glaucia Pereira e Ana Carolina Nunes – Cidadeapé</div>
@@ -347,14 +356,16 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Observatório</span>
                             </div>
                             
-                            <div className="schedule-session">Bicicleta na Escola</div>
+                            <div className="schedule-talk">Bicicleta na Escola</div>
                             <div className="schedule-author">Ana Destri - AMOBICI</div>
 
                             
                             <div className="schedule-place place-terreiro">
                                 <span className="schedule-place--name">Terreiro</span>
                             </div>
+                            
                             <div className="schedule-session">Vila Velha, um panorama</div>
+
                             <div className="schedule-talk">Mudanças da cidade e as percepções que elas proporcionam</div>
                             <div className="schedule-author">Fernando Braga – Ciclistas Urbanos Capixabas</div>
                             
@@ -393,7 +404,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Compartilhamento de Bicicletas</div>
-                            <div className="schedule-author">Moderação Rodrigo Vitório - TA</div>
+                            <div className="schedule-author">Moderação: Rodrigo Vitório - TA</div>
                             
                             <div className="schedule-talk">Coolabici</div>
                             <div className="schedule-author">
@@ -409,7 +420,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Terreiro</span>
                             </div>
 
-                            <div className="schedule-session">Conceito dos Jogos de Bicicleta</div>
+                            <div className="schedule-talk">Conceito dos Jogos de Bicicleta</div>
                             <div className="schedule-author">Ana Carboni – Bike Anjo Niterói</div>
 
                             
@@ -449,7 +460,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Átrio</span>
                             </div>
                             <div className="schedule-session">Mulheres e Mobilidade</div>
-                            <div className="schedule-author">Moderação Aline Cavalcante - Ciclocidade</div>
+                            <div className="schedule-author">Moderação: Aline Cavalcante - Ciclocidade</div>
 
                             <div className="schedule-talk">Pedala, mana!</div>
                             <div className="schedule-author">Melissa Noguchi e Lorena Costa– Bike Anjo Belém</div>
@@ -472,7 +483,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Cicloativismo e ações políticas</div>
-                            <div className="schedule-author">Moderação Felipe Alves - UCB</div>
+                            <div className="schedule-author">Moderação: Felipe Alves - UCB</div>
                             
                             <div className="schedule-talk">Prefeitura de Curitiba extinguiu infraestruturas "Calçadas Verdes"</div>
                             <div className="schedule-author">Joao Pedro Bazzo Vieira - Cicloiguaçu</div>
@@ -514,6 +525,8 @@ class App extends React.Component {
                             <div className="schedule-author">Roberta Raquel - UFSC</div>
 
                             <div className="schedule-talk">Dificuldades e facilidades de estar a frente de uma diretoria anterior masculina</div>
+                            <div className="schedule-author">Aspásia Mariana - UCB GT Gênero / Ciclovida Fortaleza</div>
+
                             <div className="schedule-talk">Leis que não são em prol da segurança e da vida das mulheres</div>
                             <div className="schedule-author">Aspásia Mariana - UCB GT Gênero / Ciclovida Fortaleza</div>
 
@@ -616,7 +629,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Cicloturismo</div>
-                            <div className="schedule-author">Moderação Ricardo Martins - RodaMundo</div>
+                            <div className="schedule-author">Moderação: Ricardo Martins - RodaMundo</div>
                             
                             <div className="schedule-talk">Equipamentos para Viagens de Bicicleta</div>
                             <div className="schedule-author">Fábio Eduardo da Silva - Clube de Cicloturismo do Brasil</div>
@@ -632,7 +645,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Ativismo e Academia</div>
-                            <div className="schedule-author">Moderação Vivan Garelli - PPGA UFF</div>
+                            <div className="schedule-author">Moderação: Vivan Garelli - PPGA UFF</div>
                             
                             <div className="schedule-talk">Processo de concepção e implementação da ciclovia da Uni.Fed. de Itajubá</div>
                             <div className="schedule-author">Pedro Torres de Melo Pedrosa - UNIFEI</div>
@@ -673,7 +686,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Cicloturimo Roteiros e Estudos</div>
-                            <div className="schedule-author">Moderação Ricardo Martins - RodaMundo</div>
+                            <div className="schedule-author">Moderação: Ricardo Martins - RodaMundo</div>
 
                             <div className="schedule-talk">Análise comparativa entre os estudos internacionais e nacionais Cicloturismo</div>
                             <div className="schedule-author">Fernanda Monteiro Lobão de Deus e Fátima Priscila Edra - UFF</div>
@@ -689,7 +702,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Observatório</span>
                             </div>
                             <div className="schedule-session">Pesquisas Ciclomobilidade</div>
-                            <div className="schedule-author">Moderação Rene Fernandes - FGV</div>
+                            <div className="schedule-author">Moderação: Rene Fernandes - FGV</div>
 
                             <div className="schedule-talk">Donde vem, pronde vão - Cruzamento de pesquisas em Recife</div>
                             <div className="schedule-author">Daniel Valença - AMECICLO</div>
@@ -833,7 +846,7 @@ class App extends React.Component {
                                 <span className="schedule-place--name">Auditório</span>
                             </div>
                             <div className="schedule-session">Paradigmas do Século XXI</div>
-                            <div className="schedule-author">Renata Falzoni – André Soares – Zé Lobo. Moderação Fernando Barcellos</div>
+                            <div className="schedule-author">Renata Falzoni – André Soares – Zé Lobo. Moderação: Fernando Barcellos</div>
 
 
                             <div className="schedule-place place-observatorio">
