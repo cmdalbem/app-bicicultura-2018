@@ -7,7 +7,7 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "/img/appicon-512x512.png",
+      "src": "./img/appicon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
