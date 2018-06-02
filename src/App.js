@@ -165,7 +165,7 @@ class App extends React.Component {
                <div className={classes.root}>
                 <ExpansionPanel>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography className={classes.heading}>Chrome</Typography>
+                    <img src="/icon_browser_chrome.png"/> Chrome
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <ol>
@@ -177,9 +177,9 @@ class App extends React.Component {
                 
                 <ExpansionPanel>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography className={classes.heading}>Safari</Typography>
+                    <img src="/icon_browser_safari.png"/> Safari
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
+                  <ExpansionPanelDetails> 
                     <ol>
                       <li>Na barra de ícones na parte de baixo da tela, selecione o ícone do meio de compartilhar (o quadradinho com uma seta saindo dele).</li>
                       <li>Selecione "Tela de Início".</li>
@@ -189,7 +189,7 @@ class App extends React.Component {
 
                 <ExpansionPanel>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography className={classes.heading}>Firefox</Typography>
+                    <img src="/icon_browser_firefox.png"/> Firefox
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <ol>
