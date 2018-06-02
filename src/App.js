@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -7,17 +7,17 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import Icon from '@material-ui/core/Icon';
+// import Icon from '@material-ui/core/Icon';
 import SvgIcon from '@material-ui/core/SvgIcon';
 // import SearchIcon from '@material-ui/icons/Search';
 // import TimeIcon from '@material-ui/icons/AccessTime';
-import StarIcon from '@material-ui/icons/Star';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+// import StarIcon from '@material-ui/icons/Star';
+// import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
 
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -28,7 +28,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import withMobileDialog from '@material-ui/core/withMobileDialog';
 
 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -94,6 +93,40 @@ class App extends React.Component {
     } else {
       this.showPWAButton = true;
     }
+
+    // Intercepts Progressive Web App event
+    // source: https://developers.google.com/web/fundamentals/engage-and-retain/app-install-banners/
+    window.addEventListener('beforeinstallprompt', e => {
+      // Prevents automatic banner
+      // e.preventDefault();
+      // _deferredPWAPrompt = e;
+      // $('.howToInstallBtn').css({'font-weight': 'bold'});
+
+      // Force to always prompt
+      e.prompt();
+
+      // Event example:
+      // window.gtag('event', 'video_auto_play_start', {
+      //   'event_label': 'My promotional video',
+      //   'event_category': 'video_auto_play',
+      //   'non_interaction': true
+      // });
+
+      window.gtag('event', 'beforeinstallprompt - popped', {'event_category': 'PWA'});
+      e.userChoice.then(function (choiceResult) {
+        if (choiceResult.outcome === 'dismissed') {
+          // User cancelled home screen install
+          window.gtag('event', 'beforeinstallprompt - refused', {'event_category': 'PWA'});
+        }
+        else {
+          // User added to home screen
+          window.gtag('event', 'beforeinstallprompt - accepted', {'event_category': 'PWA'});
+        }
+      });
+    });
+    window.addEventListener('appinstalled', e => {
+      window.gtag('event', 'appinstalled', {'event_category': 'PWA'});
+    });
   }
 
   state = {
@@ -107,6 +140,8 @@ class App extends React.Component {
 
   onAddToHomeScreenBtnClick = () => {
     this.setState({ dialogOpen: true });
+
+    window.gtag('event', 'Clicked on Add To Homescreen icon');
   };
 
   handleDialogClose = () => {
@@ -125,8 +160,8 @@ class App extends React.Component {
         <div className={classes.root}>
           <CssBaseline />
 
-          <AppBar position="static">
-            <Toolbar>
+          <AppBar position="static"> 
+            <Toolbar> 
               {/* <IconButton className={classes.menuButton} color="inherit" onClick={this.onMenuBtnClick} aria-label="Menu">
                 <MenuIcon />
               </IconButton> */}
@@ -167,7 +202,9 @@ class App extends React.Component {
                  celular. É só escolher o seu navegador abaixo pra ver como fazer:
               </DialogContentText>
                <div className={classes.root}>
-                <ExpansionPanel> 
+                <ExpansionPanel
+                  onChange={() => {window.gtag('event', 'HowToInstall - browser panel - Chrome');}}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                     <img alt="" src="./img/icon_browser_chrome.png"/> Chrome
                   </ExpansionPanelSummary>
@@ -178,8 +215,10 @@ class App extends React.Component {
                     </ol>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
-                
-                <ExpansionPanel>
+                  
+                <ExpansionPanel
+                  onChange={() => {window.gtag('event', 'HowToInstall - browser panel - Safari');}}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                     <img alt="" src="./img/icon_browser_safari.png"/> Safari
                   </ExpansionPanelSummary>
@@ -191,7 +230,9 @@ class App extends React.Component {
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
 
-                <ExpansionPanel>
+                <ExpansionPanel
+                  onChange={() => {window.gtag('event', 'HowToInstall - browser panel - Firefox');}}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                     <img alt="" src="./img/icon_browser_firefox.png"/> Firefox
                   </ExpansionPanelSummary>

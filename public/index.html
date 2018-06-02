@@ -25,6 +25,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> 
 
     <title>Bicicultura 2018</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19085664-4"></script>
+    <script>
+      if (window.location.hostname !== 'localhost') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+  
+        gtag('config', 'UA-19085664-4');
+      } else {
+        window.gtag = function(...params) {
+          console.log('[Google Analytics]', params);
+        }; 
+      }
+    </script>
+
   </head>
   <body>
     <noscript>
