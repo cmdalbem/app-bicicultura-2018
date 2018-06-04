@@ -104,6 +104,14 @@
     margin: 0 auto;
 }
 
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
 .tab-bar {
     position: sticky;
     top: 0;
