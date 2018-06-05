@@ -206,7 +206,7 @@ class App extends React.Component {
               </IconButton> */}
 
               <Typography variant="title" color="inherit" className={classes.appTitle}>
-                Bicicultura 2018
+                BICICULTURA 2018
               </Typography>
 
               { this.showPWAButton &&
