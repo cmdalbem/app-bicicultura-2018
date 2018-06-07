@@ -136,7 +136,13 @@ class App extends React.Component {
     window.addEventListener('pwa:newContent', e => {
       console.log('pwa:newContent'); 
 
-      this.notify('Há uma atualização disponível para este app! Recarregue a página para usá-lo.');
+      this.notify(
+            'Há uma versão mais nova do app! Recarregue a página para começar a usá-la.',
+            {
+                text: 'Recarregar',
+                callback: () => { window.location.reload(); }
+            }
+        );
     });
     window.addEventListener('pwa:offlineReady', e => {
       console.log('pwa:offlineReady');
@@ -163,11 +169,12 @@ class App extends React.Component {
     }
   };
 
-  notify = message => {
+  notify = (message, cta) => {
     this.setState({
       snackbar: {
         isOpen: true,
-        message: message
+        message: message,
+        cta: cta
       }
     });
   };
@@ -256,19 +263,21 @@ class App extends React.Component {
                 {this.state.snackbar.message}
               </span>}
             action={[
-              // <Button key="undo" color="secondary" size="small" onClick={this.handleSnackbarClose}>
-              //   UNDO
-              // </Button>,
+                (this.state.snackbar.cta && 
+                    <Button key="cta" color="secondary" size="small" onClick={this.state.snackbar.cta.callback}>
+                        {this.state.snackbar.cta.text}
+                    </Button>
+                ),
 
-              <IconButton
-                key="close"
-                aria-label="Close"
-                color="inherit"
-                className={classes.close}
-                onClick={this.handleSnackbarClose}
-              >
+                <IconButton
+                    key="close"
+                    aria-label="Close"
+                    color="inherit"
+                    className={classes.close}
+                    onClick={this.handleSnackbarClose}
+                >
                 <CloseIcon />
-              </IconButton>,
+                </IconButton>,
             ]}
           />
           
@@ -286,7 +295,7 @@ class App extends React.Component {
               </div>
 
               <DialogContentText>
-                Este é um Web App, que é melhor do que um App: você não precisa instalá-lo, é só acessar direto 
+                Este é um Web App, que é melhor do que um App normal: você não precisa instalá-lo, é só acessar direto 
                 pelo navegador!
               </DialogContentText>
               <DialogContentText>
@@ -294,6 +303,7 @@ class App extends React.Component {
                  celular. É só escolher o seu navegador abaixo pra ver como fazer:
               </DialogContentText>
                <div className={classes.root}>
+                <br/>
                 <ExpansionPanel
                   onChange={() => {window.gtag('event', 'HowToInstall - browser panel - Chrome');}}
                 >
