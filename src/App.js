@@ -19,7 +19,11 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+import InfoIcon from '@material-ui/icons/Info';
+import MailIcon from '@material-ui/icons/Mail';
+import LinkIcon from '@material-ui/icons/Link';
+import PlaceIcon from '@material-ui/icons/Place';
+import DateRangeIcon from '@material-ui/icons/DateRange';
 
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -39,6 +43,11 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
+
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -147,7 +156,8 @@ class App extends React.Component {
 
   state = {
     value: 0,
-    isDialogOpen: false,
+    isPwaDialogOpen: false,
+    isInfoDialogOpen: false,
     snackbar: {
       isOpen: false
     }
@@ -163,9 +173,15 @@ class App extends React.Component {
   };
 
   onAddToHomeScreenBtnClick = () => {
-    this.setState({ isDialogOpen: true });
+    this.setState({ isPwaDialogOpen: true });
 
     window.gtag('event', 'Clicked on Add To Homescreen icon');
+  };
+  
+  onInfoBtnClick = () => {
+    this.setState({ isInfoDialogOpen: true });
+
+    window.gtag('event', 'Clicked on Info topbar button');
   };
 
   handleTabChange = (event, value) => {
@@ -174,7 +190,10 @@ class App extends React.Component {
   };
 
   handleDialogClose = () => {
-    this.setState({ isDialogOpen: false });
+    this.setState({ 
+        isPwaDialogOpen: false,
+        isInfoDialogOpen: false
+    });
   };
 
   handleSnackbarClose = (event, reason) => {
@@ -209,9 +228,12 @@ class App extends React.Component {
                 BICICULTURA 2018
               </Typography>
 
+                <IconButton color="inherit" onClick={this.onInfoBtnClick} aria-label="Informações">
+                    <InfoIcon />
+                </IconButton>
+
               { this.showPWAButton &&
                 <IconButton color="inherit" onClick={this.onAddToHomeScreenBtnClick} aria-label="Adicionar à tela inicial">
-                  {/* <SearchIcon /> */}
                   <AddToHomeScreenIcon />
                 </IconButton>
               }
@@ -251,7 +273,7 @@ class App extends React.Component {
           />
           
           <Dialog
-            open={this.state.isDialogOpen}
+            open={this.state.isPwaDialogOpen}
             fullScreen={isMobile}
           >
             <DialogTitle>
@@ -324,13 +346,105 @@ class App extends React.Component {
             </DialogActions>
           </Dialog>
 
+          <Dialog
+            open={this.state.isInfoDialogOpen}
+            fullScreen={isMobile}
+          >
+            <DialogTitle>
+              Informações práticas
+            </DialogTitle>
+
+            <DialogContent>
+                <p>
+                    <img alt="" src="./img/banner.png" style={{ width: '100%' }}/>
+                </p>
+
+                <Typography variant="title" gutterBottom>
+                    Sobre o evento
+                </Typography>
+
+                <Typography variant="subheading" gutterBottom>
+                    O Bicicultura – Encontro Brasileiro de Mobilidade por Bicicleta e Cicloativismo – é um encontro 
+                    anual, organizado pela sociedade civil, para celebrar e impulsionar a cultura da bicicleta como 
+                    meio de mobilidade nas cidades brasileiras. É um espaço para o convívio, compartilhamento de 
+                    conhecimento e formação de alianças entre ciclistas, cicloativistas e todos os entusiastas e 
+                    interessados, de todos os setores sociais, na democratização urbana, na sustentabilidade ambiental 
+                    e na qualidade de vida que a bicicleta proporciona.
+                </Typography>
+
+                <List>
+                    <ListItem
+                        button
+                        component="a"
+                                href="https://www.google.com/maps/place/Museum+of+Tomorrow/@-22.895807,-43.1812478,17z/data=!4m13!1m7!3m6!1s0x997f50a0c11567:0xa0348984e3714b19!2sPra%C3%A7a+Mau%C3%A1,+1+-+Centro,+Rio+de+Janeiro+-+RJ,+20081-240!3b1!8m2!3d-22.8957279!4d-43.180529!3m4!1s0x0:0x316901f971660ce1!8m2!3d-22.8941288!4d-43.1794862https://goo.gl/maps/saZZkJA4tqn/"
+                        target="_BLANK"
+                        divider
+                    >
+                        <ListItemIcon>
+                            <PlaceIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Praça Mauá, 1 – Centro, Rio de Janeiro"/>
+                    </ListItem>
+                    <ListItem divider >
+                        <ListItemIcon>
+                            <DateRangeIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="8, 9 e 10 de Junho de 2018"/>
+                    </ListItem>
+                    <ListItem
+                        button
+                        component="a"
+                        href="http://bicicultura.rio/"
+                        target="_BLANK"
+                        divider
+                    >
+                        <ListItemIcon>
+                            <LinkIcon />
+                        </ListItemIcon>
+                            <ListItemText primary="Site oficial" secondary="http://bicicultura.rio"/>
+                    </ListItem>
+                    <ListItem
+                        button
+                        component="a"
+                        href="mailto:contato@bicicultura.rio" 
+                        target="_BLANK"
+                        divider
+                    >
+                        <ListItemIcon>
+                            <MailIcon />
+                        </ListItemIcon>
+                            <ListItemText primary="Contato do evento" secondary="contato@bicicultura.rio"/>
+                    </ListItem>
+                    <ListItem
+                        button
+                        component="a"
+                        href="mailto:cristiano.dalbem@gmail.com"
+                        target="_BLANK"
+                        divider
+                    >
+                        <ListItemIcon>
+                            <MailIcon />
+                        </ListItemIcon>
+                            <ListItemText primary="Contato do desenvolvedor (app)" secondary="cristiano.dalbem@gmail.com"/>
+                    </ListItem> 
+                </List>
+            </DialogContent>
+
+            <DialogActions>
+              <Button onClick={this.handleDialogClose} color="primary">
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
+
           <Paper className={classes.root + ' tab-bar'}>
               <Tabs
               value={this.state.value}
               onChange={this.handleTabChange}
               indicatorColor="primary"
               textColor="primary"
-              centered
+              fullWidth={isMobile}
+              centered={!isMobile}
               >
                   <Tab label="Sexta" />
                   <Tab label="Sábado" />

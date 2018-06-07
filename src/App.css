@@ -183,7 +183,6 @@
     background: black;
     display: inline-block;
     border-radius: 50%;
-    vertical-align: text-top;
     margin-right: .5em;
 }
 
@@ -226,10 +225,14 @@
 /* Desktop-only */
 @media screen and (min-width: 430px) {
     #root {
-        /* background: #D6C5FB; */
         background: url(./img/pattern.png);
         background-size: 50%;
+        height: 100%;
     } 
+
+    .schedule {
+        margin-top: 1em;
+    }
 
     .schedule-timebox {
         box-shadow: 0 7px 30px rgba(0,0,0,0.2);
@@ -238,19 +241,33 @@
     }
 
     .schedule-timebox--header {
-    padding: 2rem .5rem;
+        padding: 2rem .5rem;
         border-radius: 50%;
         font-weight: 300;
         font-size: 40px;
-        
-        /* padding: 1rem; */
-
-        /* border: 2px solid #7746ea; */
+        top: 76px;
         
         margin: 1rem;
         background: #7746ea;
         color: white;
         min-width: 120px;
         min-height: 120px;
+    }
+
+    .MuiTab-label-121 {
+        font-size: 1.2rem !important;
+        text-transform: none;
+    }
+
+    .MuiTab-root-111 {
+        height: 60px !important;
+    }
+
+    .MuiTab-labelContainer-120 {
+        padding: 1rem 2rem !important;
+    }
+
+    .TabIndicator-root-123 {
+        height: 4px !important;
     }
 }
