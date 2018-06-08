@@ -154,20 +154,27 @@ class App extends React.Component {
 
       this.notify('Você está offline.');
     });
-  }
 
-  componentDidMount = () => {
-    // this.notify('All done');
-  }
-
-  state = {
-    value: 0,
-    isPwaDialogOpen: false,
-    isInfoDialogOpen: false,
-    snackbar: {
-      isOpen: false
+    
+    let initialTab = 0;
+    const today = new Date().getDate();
+    if (today === 8) {
+        initialTab = 0;
+    } else if (today === 9) {
+        initialTab = 1;
+    } else if (today === 10) {
+        initialTab = 2;
     }
-  };
+    
+    this.state = {
+        value: initialTab,
+        isPwaDialogOpen: false,
+        isInfoDialogOpen: false,
+        snackbar: {
+            isOpen: false
+        }
+    };
+  }
 
   notify = (message, cta) => {
     this.setState({
@@ -212,6 +219,45 @@ class App extends React.Component {
   onStarBtnClick = e => {
     console.log(e);
   };
+
+  checkCurrentEvents = () => {
+      let allTimeBoxes = Array.from(document.querySelectorAll('.schedule-timebox--header'));
+      let now = new Date();
+
+      allTimeBoxes.forEach(el => {
+          let start = el.getAttribute('data-start').split(':');
+          let end = el.getAttribute('data-end').split(':');
+
+          let startDate = new Date();
+          startDate.setHours(start[0])
+          startDate.setMinutes(start[1]);
+
+          let endDate = new Date();
+          endDate.setHours(end[0])
+          endDate.setMinutes(end[1]);
+
+          // Set date to current tab date
+          startDate.setDate(8 + this.state.value);
+          endDate.setDate(8 + this.state.value);
+
+          console.log(startDate);
+          console.log(endDate);
+
+          if (now > startDate && now < endDate) {
+              el.classList.add('schedule-happening-now-badge');
+              el.scrollIntoView();
+            //   console.log(el);
+          }
+      });
+  };
+
+  componentDidUpdate = () => {
+    this.checkCurrentEvents();
+  };
+
+  componentDidMount = () => {
+    setTimeout(this.checkCurrentEvents, 700);
+  }
 
 
   render() {
@@ -469,7 +515,7 @@ class App extends React.Component {
                     {/* <div className="schedule-date">Sexta-Feira dia 8 de junho</div> */}
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="10:20" data-end="11:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">10</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -478,8 +524,6 @@ class App extends React.Component {
                                 <span className="schedule-timebox--header-h">11</span>
                                 <span className="schedule-timebox--header-m">10</span>
                             </span>
-
-                            {/* <div className="schedule-happening-now-badge">Agora!</div> */}
                         </div>
 
                         <div className="schedule-timebox--content">
@@ -511,7 +555,7 @@ class App extends React.Component {
                     </div>
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="11:20" data-end="12:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">11</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -558,7 +602,7 @@ class App extends React.Component {
                     </div>
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="12:20" data-end="13:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">12</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -598,7 +642,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="13:10" data-end="14:30">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">13</span>
                                 <span className="schedule-timebox--header-m">10</span>
@@ -615,7 +659,7 @@ class App extends React.Component {
                     </div>
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="14:30" data-end="15:20">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">14</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -665,7 +709,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="15:30" data-end="16:20">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">15</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -726,7 +770,7 @@ class App extends React.Component {
                     </div>
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="16:30" data-end="17:39">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">16</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -780,7 +824,7 @@ class App extends React.Component {
                     <div className="schedule-date">Sábado dia 9 de junho</div> */}
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="10:20" data-end="11:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">10</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -841,7 +885,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="11:20" data-end="12:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">11</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -888,7 +932,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="12:20" data-end="13:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">12</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -923,7 +967,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="13:10" data-end="14:30">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">13</span>
                                 <span className="schedule-timebox--header-m">10</span>
@@ -941,7 +985,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="14:30" data-end="15:20">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">14</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -1006,7 +1050,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="15:30" data-end="16:20">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">15</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -1070,7 +1114,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="16:30" data-end="17:00">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">16</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -1092,7 +1136,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="17:00" data-end="17:45">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">17</span>
                                 <span className="schedule-timebox--header-m">00</span>
@@ -1119,7 +1163,7 @@ class App extends React.Component {
                     <div className="schedule-date">Domingo dia 10 de junho</div>. */}
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="10:20" data-end="13:10">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">10</span>
                                 <span className="schedule-timebox--header-m">20</span>
@@ -1141,7 +1185,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="13:10" data-end="14:30">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">13</span>
                                 <span className="schedule-timebox--header-m">10</span>
@@ -1159,7 +1203,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="14:30" data-end="15:20">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">14</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -1217,7 +1261,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="15:30" data-end="16:30">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">15</span>
                                 <span className="schedule-timebox--header-m">30</span>
@@ -1238,7 +1282,7 @@ class App extends React.Component {
 
 
                     <div className="schedule-timebox">
-                        <div className="schedule-timebox--header">
+                        <div className="schedule-timebox--header" data-start="16:30" data-end="17:45">
                             <span className="schedule-timebox--header-start">
                                 <span className="schedule-timebox--header-h">16</span>
                                 <span className="schedule-timebox--header-m">30</span>

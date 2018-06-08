@@ -1,5 +1,5 @@
 @keyframes pulse {
-  from { opacity: 0.6;}
+  from { opacity: 0.4;}
   to { opacity: 1;}
 }
 
@@ -34,7 +34,6 @@
 }
 
 /* .schedule-timebox--header {
-    position: -webkit-sticky;
     position: sticky;
     top: 60px;
     padding: 1.3rem;
@@ -155,17 +154,21 @@
     margin-top: .5rem;
 }
 
-.schedule-happening-now-badge {
+.schedule-happening-now-badge:after {
     background: red;
     color: white;
-    padding: .5em;
+    padding: 0 .5rem;
     border-radius: 25px;
-    font-size: 0.5em;
     text-transform: uppercase;
-    margin-top: 1em;
     font-weight: bold;
-    
     animation: pulse 0.5s infinite ease-in-out alternate;
+    content: 'AGORA';
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .8rem;
+    margin-left: 12px;
 }
 
 .schedule-place--name {
@@ -253,6 +256,12 @@
         color: white;
         min-width: 120px;
         min-height: 120px;
+    }
+
+    .schedule-happening-now-badge:after {
+        top: 140px;
+        font-size: 1.2rem;
+        margin-left: 0;
     }
 
     .MuiTab-label-121 {
