@@ -134,7 +134,7 @@ class App extends React.Component {
     });
 
     window.addEventListener('pwa:newContent', e => {
-      console.log('pwa:newContent'); 
+      console.debug('pwa:newContent'); 
 
       this.notify(
             'Há uma versão mais nova do app! Recarregue a página para começar a usá-la.',
@@ -145,12 +145,12 @@ class App extends React.Component {
         );
     });
     window.addEventListener('pwa:offlineReady', e => {
-      console.log('pwa:offlineReady');
+      console.debug('pwa:offlineReady');
 
       this.notify('Conteúdo disponível offline.');
     });
     window.addEventListener('pwa:offlineMode', e => {
-      console.log('pwa:offlineMode');
+      console.debug('pwa:offlineMode');
 
       this.notify('Você está offline.');
     });
@@ -217,10 +217,12 @@ class App extends React.Component {
   };
 
   onStarBtnClick = e => {
-    console.log(e);
+    console.debug(e);
   };
 
   checkCurrentEvents = () => {
+      console.debug('checkCurrentEvents');
+
       let allTimeBoxes = Array.from(document.querySelectorAll('.schedule-timebox--header'));
       let now = new Date();
 
@@ -240,23 +242,29 @@ class App extends React.Component {
           startDate.setDate(8 + this.state.value);
           endDate.setDate(8 + this.state.value);
 
-          console.log(startDate);
-          console.log(endDate);
+          console.debug(startDate);
+          console.debug(endDate);
 
           if (now > startDate && now < endDate) {
               el.classList.add('schedule-happening-now-badge');
-              el.scrollIntoView();
-            //   console.log(el);
+              el.scrollIntoView({ behavior: 'smooth', block: 'start'} );
+            //   console.debug(el);
           }
       });
   };
+
+  checkCurrentEventsRec = () => {
+    this.checkCurrentEvents();
+    setTimeout(this.checkCurrentEventsRec, 60000);
+  }
 
   componentDidUpdate = () => {
     this.checkCurrentEvents();
   };
 
   componentDidMount = () => {
-    setTimeout(this.checkCurrentEvents, 700);
+    // We have to wait a little until everything is rendered
+    setTimeout(this.checkCurrentEventsRec, 1000);
   }
 
 
