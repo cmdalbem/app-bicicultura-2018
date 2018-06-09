@@ -49,6 +49,14 @@
         gtag('js', new Date());
   
         gtag('config', 'UA-19085664-4');
+
+        // Generic tracking of JS errors
+        // Thanks http://danwilkerson.com/google-analytics-error-tracking-guide/#javascripterrors
+        if (typeof window.onerror === 'object' && window.onerror === null) {
+          window.onerror = function (message, file, lineNumber) {
+            gtag('event', 'JS Error', message, 'URL: ' + document.location.href + '| File: ' + file + '| Line: ' + lineNumber, 0, { 'nonInteraction': true });
+          }
+        }
       } else {
         window.gtag = function(...params) {
           console.log('[Google Analytics]', params);
