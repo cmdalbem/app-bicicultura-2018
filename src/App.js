@@ -220,7 +220,7 @@ class App extends React.Component {
     console.debug(e);
   };
 
-  checkCurrentEvents = () => {
+  checkCurrentEvents = (withScroll = false) => {
       console.debug('checkCurrentEvents');
 
       let allTimeBoxes = Array.from(document.querySelectorAll('.schedule-timebox--header'));
@@ -247,8 +247,10 @@ class App extends React.Component {
 
           if (now > startDate && now < endDate) {
               el.classList.add('schedule-happening-now-badge');
-              el.scrollIntoView({ behavior: 'smooth', block: 'start'} );
-            //   console.debug(el);
+              
+              if (withScroll) {
+                  el.scrollIntoView({ behavior: 'smooth', block: 'start'} );
+              }
           }
       });
   };
@@ -259,7 +261,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate = () => {
-    this.checkCurrentEvents();
+    this.checkCurrentEvents(true);
   };
 
   componentDidMount = () => {
@@ -968,7 +970,7 @@ class App extends React.Component {
                             <div className="schedule-place place-tenda">
                                 <span className="schedule-place--name">Tenda</span>
                             </div>
-                            <div className="schedule-session">ções de Bike em Pirenópolis</div>
+                            <div className="schedule-session">Ações de Bike em Pirenópolis</div>
                             <div className="schedule-author">Larissa Cantarelli – Bike Anjo Pirenópolis</div>
                         </div>
                     </div>
