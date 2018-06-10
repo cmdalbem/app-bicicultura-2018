@@ -176,6 +176,8 @@ class App extends React.Component {
     };
   }
 
+  currentEventsCheckTimeout = null;
+
   notify = (message, cta) => {
     this.setState({
       snackbar: {
@@ -251,13 +253,19 @@ class App extends React.Component {
               if (withScroll) {
                   el.scrollIntoView({ behavior: 'smooth', block: 'start'} );
               }
+          } else {
+              el.classList.remove('schedule-happening-now-badge');
           }
       });
   };
 
   checkCurrentEventsRec = () => {
     this.checkCurrentEvents();
-    setTimeout(this.checkCurrentEventsRec, 60000);
+    
+    if (this.currentEventsCheckTimeout) {
+        clearTimeout(this.currentEventsCheckTimeout);    
+    }
+    this.currentEventsCheckTimeout = setTimeout(this.checkCurrentEventsRec, 60000);
   }
 
   componentDidUpdate = () => {
